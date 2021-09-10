@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html> 
+<head>  
+	<meta charset="utf-8">
+	<title>Landing</title>
+	<link rel="stylesheet" type="text/css" href="css/landing.css">
+	<link rel="stylesheet" type="text/css" href="css/landing_login.css">
+	<link rel="stylesheet" type="text/css" href="css/landing_txt-img.css">
+</head>
+<body>
+	<section class="header">
+	<nav>
+		<div class="logo">
+			<a href="landing.html"><img class="logo-img" src="images/voteicon.png"></a> 
+		</div>
+		<div class="nav-items">
+			<ol>
+				<li  id="sign-up-opt" onclick="play_signup()" >Sign Up</li>
+				<li id="admin-opt"  onclick="play_login(this)" > Admin</li>
+
+			</ol>		
+		</div>
+	</nav>
+	</section> 
+
+	<section class="middle">
+		<div class="text-img" id="Front-text-img" >	
+			<div class="text-section" id="js_button" >
+				<h1 class="main-head">ELECTION CENTER</h1>
+				<small class="tag-line">
+					Cast Your Choice in a CLICK !
+				</small>
+				<button id="user-opt" onclick="play_login(this)">Let's Go</button>
+			</div>
+
+			<div class="Log-Center" id="js_login_section" style = "display: none;">
+				<div class="Login-text">LOG IN</div>
+				
+				<div class="Form-area">
+					<form action="php/landing.php" method="POST">
+						<input type="text" name="ursname" placeholder="Username">
+						<input type="password" name="psw" placeholder="Password">
+				</div>
+				<input type="submit" name="login" value="LOGIN">
+					</form>
+			</div>	
+			<div class="vote-img" id="vote-img-id">			
+			</div>	
+		</div>
+
+		<div class="Sign-up-session" id="Sign-up-main" style="display: none;">
+			<form action="landing.php" method="POST">
+			<div class = 'Sign-form-area'>
+				<h1 class = Sign-text> SIGN UP</h1>
+				<input type="text" name="Fname" placeholder="First Name" required>
+				<input type="text" name="Lname" placeholder="Last Name"required>
+				<input type="text" name="Eid" placeholder="Email ID"required>
+				<div class="Drop-area">
+					<select class="dept-drop" name="Department" required>
+						<option disabled selected>Department</option>
+						<option value="BCA"> BCA </option>
+						<option value="MCA"> MCA </option>
+						<option value="Bcom"> Bcom </option>
+						<option value="Mcom"> Mcom </option>
+					</select>
+					 <select class="year-drop" name="Year" required>
+						<option disabled selected>Year</option>
+						<option value="First"> First </option>
+						<option value="Second"> Second </option>
+						<option value="Third"> Third </option>
+					</select> 
+				</div>
+				<input type="Password" name="Password" placeholder="Password" required>
+				<input type="Password" name="Pwd" placeholder="Confirm Password" required>
+				<div>
+				<input type="submit" name="subbtn" value="SIGN UP">
+				</div>
+			</div>			
+			</form>	
+		</div>
+	</section>
+	
+<script type="text/javascript" src="js/landing.js">
+	
+</script>
+</body>
+</html>

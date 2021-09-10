@@ -1,0 +1,62 @@
+.Log-Center {
+	background: none;
+	align-self: center; 
+	padding: 5px 15px; 
+	display: flex;
+	flex-direction: column;
+	margin-right: 30px;
+	margin-left: 30px;
+
+}
+
+.Login-text {
+	letter-spacing: 2px;
+	color:  white;
+	font-size: 8.5vmin;
+	font-family: sans-serif;
+	font-weight: 550;
+	margin-bottom: 2%;
+}
+
+.Form-area {
+	display: block;
+}
+
+.Form-area input {
+	outline: none;
+	background: white;
+	font-size: 19px;
+	padding: 7px 8px;
+	border-radius: 5px;
+	border:none;
+	width: 290px;
+	display: block;
+	margin: 15px 0 0 0;
+
+}
+
+input[type=submit] {
+	background:  #3498db  ;
+	width: 100%;
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	align-self: center;
+	margin-top: 25px;
+	border-radius: 5px;
+	padding: 11px 0px;
+	border: none;
+	margin-bottom: 10px;
+	cursor: pointer;
+	transition: 350ms;
+
+}
+
+	
+input[type=submit]:hover {
+	background: #f39c12;
+}
+
+/* --------------------------------------------------------------------------------------- */
+
