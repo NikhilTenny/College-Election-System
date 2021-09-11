@@ -1,25 +1,37 @@
 .Log-Center {
-	background: none;
-	align-self: center; 
-	padding: 5px 15px; 
+	position: absolute;
+	background: green;
 	display: flex;
+	padding: 10px 15px;
+	left: 50%;
+	transform: translateX(-50%);
 	flex-direction: column;
-	margin-right: 30px;
-	margin-left: 30px;
+	width: 25%;
+	align-items: center;	
+}
+
+#login-img {
+	width: 45px;
+	height: 45px;
 
 }
 
 .Login-text {
 	letter-spacing: 2px;
 	color:  white;
-	font-size: 8.5vmin;
+	font-size: 8.2vmin;
 	font-family: sans-serif;
 	font-weight: 550;
-	margin-bottom: 2%;
+	margin-bottom: 20px;
 }
 
 .Form-area {
-	display: block;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+
+
 }
 
 .Form-area input {
@@ -29,27 +41,28 @@
 	padding: 7px 8px;
 	border-radius: 5px;
 	border:none;
-	width: 290px;
+	margin: 5px 0px;
+	width: 90%;
 	display: block;
-	margin: 15px 0 0 0;
+
 
 }
 
 input[type=submit] {
 	background:  #3498db  ;
-	width: 100%;
+	width: 85%;
 	color: white;
 	font-size: 18px;
 	font-weight: bold;
 	letter-spacing: 2px;
 	align-self: center;
-	margin-top: 25px;
+	margin-top: 15px;
 	border-radius: 5px;
 	padding: 11px 0px;
 	border: none;
 	margin-bottom: 10px;
 	cursor: pointer;
-	transition: 350ms;
+	transition: 250ms;
 
 }
 
@@ -57,6 +70,16 @@ input[type=submit] {
 input[type=submit]:hover {
 	background: #f39c12;
 }
+
+.last_text {
+	font-family: sans-serif;
+}
+.in_redirect {
+	background: none;
+	border: none;
+	font-size: 17px;
+	color: blue;
+	
 
 /* --------------------------------------------------------------------------------------- */
 

@@ -80,17 +80,18 @@ nav {
 /* Sign up section */
 .Sign-form-area {
 	position: absolute;
-
 	left: 50%;
+	background: #28B463;
 	transform: translateX(-50%);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 490px;
-
+	width: 40%;
+	margin-top: 10px;
+	padding-top: 25px;
+	padding-bottom: 25px;
 	justify-content: space-around;
-
-
+	box-shadow: 7px 10px 20px 8px   black;
 }
 
 .Sign-text {
@@ -100,12 +101,23 @@ nav {
 	letter-spacing: 2px;
 	margin-bottom: 15px;
 	color: white;
+
+}
+
+.Sign-form-area > div {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 85%;
+
+
 }
 
 .Sign-form-area input {
 	outline: none;
-	padding: 8px 8px;
-	width: 80%;
+	padding: 8px 0px;
+	width: 85%;
+
 	margin: 5px 0px;
 	border: none;
 	border-radius: 5px;
@@ -114,32 +126,32 @@ nav {
 ::placeholder {
 	color: #7f8c8d;
 	font-size: 15px;
+	padding-left: 8px;
 }
 
-.Sign-form-area > div {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	width: 86%;
-}
+
 
 .Sign-form-area > div input[type=submit] {
 	margin-left: 1%;
 	margin-right: 1%;
 }
+
+
+
 select {
 	margin: 5px 0px;
-	padding: 7px 5px;
+	padding: 7px 1px;
 	background: white;
 	color: #7f8c8d;
 	cursor: pointer;
 	border-radius: 5px;
 	outline: none;
 	border: 1px solid white;
-	width: 47%;
+	width: 30%;
 	font-size: 16px;
 
 }
+
 
 select:hover,select:focus {
 	border: 1px solid #bdc3c7;
