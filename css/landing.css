@@ -149,12 +149,16 @@ select {
 	border: 1px solid white;
 	width: 30%;
 	font-size: 16px;
-
 }
 
 
 select:hover,select:focus {
 	border: 1px solid #bdc3c7;
+}
+
+.error-msg {
+	color: red;
+	font-size: 20px;
 }
 /* -------------------------------------------------------------------------------------- */
 

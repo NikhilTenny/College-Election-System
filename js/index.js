@@ -1,3 +1,11 @@
+function sign_error() {
+	let uname = document.getElementById("sign-uname");
+	console.log("dfdf");
+	console.log(uname);
+}
+
+
+
 // remove everything except logo
 function remove_sections() {
 	let sign_up = document.getElementById('Sign-up-main');
@@ -46,4 +54,5 @@ function print_ad_log() {
 	remove_sections();
 	document.getElementById('admin_login_form').style.display = "block";
 	document.getElementById('admin-opt').style.display = "None";
+
 }
