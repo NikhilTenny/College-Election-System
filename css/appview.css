@@ -1,0 +1,113 @@
+.candidate_Profile {
+
+
+	margin-top: 30px;
+	display: grid;
+	grid-template-columns: 55%;
+	justify-content: center;
+
+
+	
+}
+
+.candidate {
+	background: linear-gradient(#152D35,#476072);
+	padding: 0 17px 20px 17px;
+	box-shadow: 0px 10px 15px grey;
+
+}
+
+.candidate_Profile .c_Heading {
+	padding: 15px 15px 30px 15px;
+	display: flex;
+	justify-content: space-between;
+	font-size: 2.5em;
+	font-weight: bold;
+	color: white;
+	
+}
+
+.c_Heading i {
+	color: #FA7D09;	
+	font-size: 35px;
+	transition: 220ms;
+}
+
+.c_Heading i:hover {
+	color: white;
+}
+
+.c_details {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ padding-bottom: 10px;
+ color: white;
+}
+
+.c_details div {
+	margin-bottom: 15px;
+}
+
+.c_details div label {
+	display: inline-block;
+	font-size: 1.3em;
+	font-weight: bold;
+	width: 130px;
+	text-align: left;
+	padding-left: 10px;
+
+}
+
+textarea {
+	vertical-align: top;
+}
+
+.c_details input,
+.c_details textarea {
+	//background: none;
+	border-radius: 5px;
+	border: none;
+	padding: 5px 10px;
+	margin-left: 20px;
+	width: 70%;
+	font-size: 1.2em;
+	font-weight: bold;
+	resize:none
+
+}
+
+.c_details textarea {
+	font-size: 1.1em;
+}
+
+.buttons {
+	margin-top: 5px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.c_btn {
+	font-size: 1.4em;
+	padding: 2% 8%;
+	border: none;
+	color: white;
+	transition: 110ms;
+	
+}
+
+.c_btn.decline {
+	background: #FF2511;  
+	border-radius: 5px;
+}
+.c_btn.accept {
+	background: #18A558;
+	border-radius: 5px;
+}
+.c_btn.decline:hover {
+	background:  #ff3f34;
+}
+.c_btn.accept:hover {
+	background:  #32CD30;
+
+

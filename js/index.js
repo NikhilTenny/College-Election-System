@@ -1,10 +1,6 @@
 function sign_error() {
 	let uname = document.getElementById("sign-uname");
-	console.log("dfdf");
-	console.log(uname);
 }
-
-
 
 // remove everything except logo
 function remove_sections() {

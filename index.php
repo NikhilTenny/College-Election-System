@@ -75,7 +75,7 @@
 					echo $_SESSION['data']['message'];
 				}
 			}
-			?>
+			?> 
 		 </span>
 		<div class="Form-area">
 			<input type="text" name="Username" placeholder="Username" required>

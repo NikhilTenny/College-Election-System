@@ -1,0 +1,322 @@
+* 
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins',sans-serif;
+
+}
+
+
+
+/* Navigation Bar */
+
+.container {
+	position: relative;
+	width: 100%;
+
+}
+
+.navigation {
+	position: fixed;
+	width: 250px;
+	height: 100%;
+	background: #182C61;
+	transition: 250ms;
+	
+
+}
+
+.navigation ul {
+	position: relative;
+	width: 100%;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+}
+
+.navigation ul li {
+	position: relative;
+	width: 100%;
+	list-style: none;
+	overflow: hidden;
+}
+
+.navigation ul li:hover {
+	background: #34ace0; 
+
+
+} 
+
+.admin_icon a {
+	width: 100%;
+	text-decoration: none;
+	color: white;
+	display: flex;
+	overflow: hidden;
+}
+
+.admin_icon a i {
+	font-size: 30px;
+	line-height: 60px;
+	padding: 0 19px;
+	min-width: 75px;
+
+}
+.admin_Text {
+	font-size: 30px;
+	font-weight: 400;
+	font-family: 'Popins',sans-serif;
+	color: white;
+	padding: 0 10px;
+	line-height: 70px;
+
+}
+
+.navigation ul li a {
+	position: relative;
+	width: 100%;
+	display: flex;
+	text-decoration: none;
+	color: white;
+}
+
+li a span i {
+	color: white;
+} 
+
+
+.navigation ul li a .icon{
+	position: relative;
+	display: block;
+	height: 25px;
+	min-width: 75px;
+	text-align: center;
+	height: 50px;
+	font-size: 20px;
+	line-height: 50px;
+	padding: 0 10px;
+}
+
+.navigation ul li a .title {
+	position: relative;
+	display:  block;
+	font-size: 20px;
+	padding: 0 10px;
+	height: 50px;
+	line-height: 50px;
+
+}
+
+.navigation.active {
+	width: 75px; 
+}
+
+
+/* ------------------------------------------------------------------------------------------ */
+/* Top bar */
+.main {
+	position: absolute;
+	width: calc(100% - 250px);
+	left: 250px;
+	min-height: 100vh;
+	background: #ecf0f1;
+	transition: 250ms;
+	overflow:scroll;
+	height: 100vh;
+}
+
+.main.active {
+	width: calc(100% - 75px);
+	left: 75px;
+
+}
+
+.main .topbar {
+	background: white;
+
+	width: 100%;
+	height: 60px;
+	padding: 0 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center ;
+	box-shadow:  5px 0px 10px grey;
+}
+
+.topbar .toggle {
+	color: #182C61;
+	font-size: 30px;
+	cursor: pointer;
+}
+
+.toggle::before {
+	content: "\f0c9";
+	position: absolute;	
+	top:  0;
+	transform: translateY(40%);	
+	font-family: 'Font Awesome\ 5 Free';
+	font-size: 30px;
+	font-weight: 900;
+}
+
+.user img {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+/* ------------------------------------------------------------------------------------------ */
+
+.tables {
+	margin-top: 20px;
+	position: relative;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+}
+
+
+
+/* ------------------------------------------------------------------------------------------ */
+
+/* Election Table */
+.election  {
+	position: relative;
+	margin: 26px 13px 26px 26px ;
+	padding: 17px;
+	background: white;
+	max-height: 500px;
+	min-width: 400px;
+	box-shadow: 20px grey;
+	box-shadow: 0px 10px 20px grey;
+}
+
+
+
+.table_Header{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-bottom: 15px;
+}
+
+.table_Header h2 {
+	font-size: 1.9em;
+	font-weight: bold;
+}
+
+.btn {
+	padding: 7px;
+	text-decoration: none;
+	color: white;
+	background:#3498db;
+	border-radius: 3px;
+}
+
+.election_Table {
+border-collapse: collapse;
+width: 100%;
+
+}
+
+.election_Table thead {
+	background: #34495e;
+	color: white;	
+}
+.election_Table thead th{
+	padding: 12px 8px  12px 4px;
+	text-align: left;
+}
+
+.election_Table tbody td {
+	padding: 11px 0px 11px 4px;	
+}
+
+.election_Table tbody tr:hover {
+	background: #ced6e0;
+	
+}
+
+.election_Table tbody tr {
+	border-bottom: 1px solid #34495e;
+}
+
+.election_Table thead th:last-child,
+.election_Table tbody td:last-child {
+	text-align: right;
+}
+
+.election_Table tbody tr:last-of-type{
+	border-bottom: 4px solid #34495e;	
+}
+
+.status {
+	position: relative;
+	padding: 3px 5px;
+}
+
+.status.Ongoing {
+	background: green;
+	border-radius: 5px;
+	color: white;
+}
+.status.Declared {
+	background: orange;
+	border-radius: 5px;
+	color: black;
+}
+.status.Finished {
+	background: red;
+	border-radius: 5px;
+	color: white;
+}
+
+/* Recent User table */
+
+.student {
+	position: relative;
+	max-width: auto;
+	min-width: 320px;
+	padding: 17px;
+	max-height: 500px;
+	margin: 26px 26px 26px 13px;
+	background: white;
+	box-shadow: 0px 10px   20px grey;
+}
+
+.user_Table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.user_Table tbody td {
+	padding: 6px 0px 6px 4px;	
+}
+
+.user_Table tbody td .user_Default_img {
+	position: relative;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.user_Table tbody td .user_Default_img img {
+	width: 100%;
+	height: 100%;
+}
+.user_Table tbody td:nth-child(1) {
+	text-align: right;
+}
+
+.user_Table tbody tr:hover {
+	background: #ced6e0;
+
+
+
+
+
+
+
+

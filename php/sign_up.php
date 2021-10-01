@@ -54,17 +54,13 @@ if($_POST["subbtn"] == "SIGN UP") {
 		$deptid = getdeptid($dept,$con);
 
 		$signupquery = "insert into users (Email,First_name,Last_name,Gender,Department_id,Year_id) values
-										  ('$email','$fname','$lname','$gender',$deptid,$yrid);";
-
+										  ('$email','$fname','$lname','$gender',$deptid,$yrid);"; 
 		mysql_query($signupquery,$con); 								  
 		$id = getid($email,$con);
 		log_table_insert($id,$con,$pswd);
 		if(isset($_SESSION['data'])) {	
 			unset($_SESSION['data']);
 		}	
-
-
-
 	}
 	else {
 		//if username already exists 

@@ -18,11 +18,9 @@ function getuid($uname,$con,$main_table) {
 
 // Check if the username and password is correct
 function checklogin($id,$pswd,$con,$login_table) {
-
 	$passQ = mysql_query("select Password from $login_table where(id = '$id');",$con);
 	if(mysql_num_rows($passQ) != 0) {
 		$pass = mysql_fetch_array($passQ);
-
 	}
 	if($pass[0] == $pswd) {
 		return True;
@@ -63,6 +61,11 @@ if($id != False) {
 	if(checklogin($id,$pswd,$con,$login_table) == True) {
 		if(isset($_SESSION['data'])) {
 			unset($_SESSION['data']);
+		}
+		if($main_table == 'admin') {
+			session_start();
+			$_SESSION['ad_Uname'] = $uname;
+			header("Location:/project/admin.php");
 		}
 	}
 	else {	

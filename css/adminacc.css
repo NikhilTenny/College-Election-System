@@ -1,0 +1,83 @@
+
+.profile_Area {
+	position: relative;
+	width: 450px;
+	height: 450px;
+	left: 50%;
+	right: 50%;
+	transform: translateY(-50%);
+	transform: translateX(-50%); 
+	margin-top: 40px;
+	background: #222831;
+	box-shadow: 0px 5px 15px 0px grey;
+	box-shadow: -5px 10px 20px  grey;
+
+}
+
+.profile_Area h2 {
+	font-size: 2.6em;
+
+}
+.p_Heading {
+	color: #EEEEEE;
+	padding: 25px 0 10px 0;
+	display: flex;
+	justify-content: center;
+}
+
+
+.form_Area {
+	display: flex;
+	height: auto;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column;
+
+}
+
+.profile_details {
+	padding: 10px 5px;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+}
+
+.profile_details label {
+	font-weight: bold;
+	color: #EEEEEE;
+}
+
+.profile_details input[type = text],
+.profile_details input[type = password]
+ {
+ 	outline: none;
+	width: 310px;
+	padding: 5px 12px;
+	border: none;
+	border: 2px solid white;
+	border-radius: 5px;
+
+}
+
+.profile_details input[type = submit] {
+	width: 310px;
+	font-family: sans-serif;
+	background: #FFD369;
+	color: black;
+	border: none;
+	font-size: 1.5em;
+	font-weight: bold;
+	letter-spacing: 1.2px;
+	padding: 10px 12px;
+	margin-top: 10px;
+	border-radius: 5px;
+	color: #222831;
+	transition: 120ms;
+}
+
+.profile_details input[type = submit]:hover {
+	padding: 14px 12px;
+	width: 318px;
+	margin-top: 6px;
+
+}
