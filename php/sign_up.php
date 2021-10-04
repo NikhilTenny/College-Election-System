@@ -40,7 +40,7 @@ function getid($email,$con) {
 	$idQ = mysql_query("select id from users where (Email = '$email');",$con);
 	$id = mysql_fetch_array($idQ);
 	return $id[0];
-}
+} 
 
 // Insert user_id and password to user_login table
 function log_table_insert($id,$con,$pswd) {
@@ -58,9 +58,10 @@ if($_POST["subbtn"] == "SIGN UP") {
 		mysql_query($signupquery,$con); 								  
 		$id = getid($email,$con);
 		log_table_insert($id,$con,$pswd);
-		if(isset($_SESSION['data'])) {	
-			unset($_SESSION['data']);
-		}	
+		session_start();
+		$_SESSION['data']['window'] = "users";
+		header("Location:/project/index.php");
+			
 	}
 	else {
 		//if username already exists 

@@ -95,6 +95,7 @@
 			<?php 
 			if(isset($_SESSION['data']['window'])) {
 				if($_SESSION['data']['window'] == 'users') {
+					if(isset($_SESSION['data']['message']))
 					echo $_SESSION['data']['message'];
 				}
 			}
