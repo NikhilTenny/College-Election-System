@@ -1,0 +1,116 @@
+.input_area {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+
+.input_area .form_Area {
+	background: linear-gradient(#152D35,#476072);
+	display: flex;
+	flex-direction: column;
+	padding: 1.5em;
+	box-shadow: -5px 5px 25px grey;
+
+}
+
+
+.input_area .form_Area {
+	
+	width: 550px;
+	min-width: 300px;
+
+}
+
+.input_area .form_Area span {
+	align-self: center;
+	font-size: 2.7rem;
+	padding-bottom: .3em;
+	font-weight: bold;
+	color: white;
+}
+
+.input_area .form_Area div {
+	padding: .6em .0;
+
+}
+
+.form_Area .election_Name {
+	display: flex;
+	flex-direction: column;
+}
+
+::placeholder {
+	font-size: 1rem;
+	color: grey;
+}
+
+.form_Area .election_Name input {
+	padding: .5em .6em;
+	border: none;
+	border-radius: 6px;
+	font-size: 1rem;
+}
+
+.form_Area .dropDown {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+}
+
+.form_Area .dropDown select {
+	border: none;
+	width: 48%;
+	padding: .5em .6em;
+	font-size: 1rem;
+	background: white;
+	border-radius: 6px;
+
+}
+
+.form_Area .datetime {
+	display: flex;
+	flex-direction: row;
+	gap: 16px;
+}
+
+.form_Area .datetime  .start,
+.form_Area .datetime  .end{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.form_Area .datetime input {
+	font-size: 1rem;
+	padding: .4em .5em;
+	border: none;
+	border-radius: 6px;
+}
+
+label {
+	font-size: 1.1rem;
+	font-weight: bold;
+	color: white;
+	padding-bottom: .09em;
+}
+
+.input_area input[type = submit] {
+	background: #FF7A00;
+	border-radius: 7px;
+	font-size: 1.7rem;
+	padding: .3em 1em;
+	border: none;
+	color: white;
+	transition: 190ms ease-in-out;
+}
+
+.input_area input[type = submit]:hover {
+	background: #30bc18;
+}
+
+
+
+

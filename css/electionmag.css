@@ -1,0 +1,69 @@
+.election_Management {
+	padding: 1.5em;
+}
+
+.easy_Details {
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 1.5em;
+
+	
+}
+
+.easy_Details .boxarea {
+	display: flex;
+	width: 250px;
+	background: white;
+	justify-content: space-around;
+	height: 120px;
+	box-shadow: 5px 5px 15px grey;
+
+}
+
+.easy_Details .boxarea .boxdetails {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.easy_Details .boxarea i {
+	font-size: 2.3rem;
+}
+
+.easy_Details .boxarea .boxdetails .number {
+	font-size: 2.4rem;
+	font-weight: 700;
+}
+
+.easy_Details .boxarea .boxdetails .name {
+	font-size: 1.3rem;
+	font-weight: 700;
+}
+
+.easy_Details .boxarea i {
+	 align-self: center;
+}
+
+.create_Button .start_Election {
+	background: #023047;
+	padding: .7em 6em;
+	color: white;
+	font-size: 1.4rem;
+	border: none;
+	border-radius: 10px;
+	transition: 250ms ease-in-out;
+	text-decoration: none;
+
+
+}
+
+.create_Button .start_Election:hover {
+	color: color;
+	background: #FDB827;
+	font-size: 1.66em;
+	border-radius:40px;
+	box-shadow: 1px 5px 10px grey;
+
+}

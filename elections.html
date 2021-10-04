@@ -6,8 +6,13 @@
 	<link rel="stylesheet" type="text/css" href="css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="css/fontawesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/panel.css">
-	<script src = "js/panel.js" type="text/javascript">
-	</script>
+	<link rel="stylesheet" href="css/electionmag.css">
+	<script src = "js/panel.js" type="text/javascript"></script>
+	<script src="js/jquery.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="css/table.css">
+	<!-- DataTable files -->
+	<link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"> 
+	<script type="text/javascript" src="DataTables/datatables.min.js"></script>
 </head> 
 <body>
 	<div class="container">
@@ -68,6 +73,74 @@
 				</div>
 				<div class="user">
 					<a href="adminacc.html"><img src="images/admin_photo.png"></a>
+				</div>
+			</div>
+			<div class="election_Management">
+				<div class="easy_Details">
+					<div class="boxarea ongoing">
+						<div class="boxdetails ongoing">
+							<span class="number ongoing">12</span>
+							<span class="name">Ongoing Election</span>
+						</div>
+						<i class="fas fa-person-booth"></i>
+						
+					</div>
+					<div class="create_Button">
+						<a class="start_Election" href="createElection.html"> Create Election</a>
+					</div>
+					<div class="boxarea declared">
+						<div class="boxdetails declared">
+								<span class="number declared">12</span>
+								<span class="name">Declared Election</span>
+						</div>
+						<i class="fas fa-poll-h"></i>
+					</div>
+				</div>
+				<!-- Table with list of elections -->
+				<div class="table_Area">
+					<div class="t_Heading">
+						<h2>Elections</h2>
+					</div>
+					<table id="elections_Table" class="table elections">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Department</th>
+							<th>Year</th>
+							<th>Start Date</th>
+							<th>End Date</th>
+							<th>Voters</th>
+							<th>Status</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<a href="jidjf.html">
+						<tr>
+							<td>dfdf</td>
+							<td>dfa</td>
+							<td>d</td>
+							<td>df</td>
+							<td>df</td>
+							<td>df</td>
+							<td>df</td>
+							<td><a class="button View">View</a></td>
+							
+						</tr>
+						</a>
+					</tbody>
+					</table>
+					<script type="text/javascript">
+						$(document).ready(function(){
+							$('#elections_Table').DataTable({
+								'columnDefs': [{
+					    		'targets':4,
+					    		'orderable':false,
+					    	}]
+					    });
+
+						});
+					</script>
 				</div>
 			</div>
 		</div>
