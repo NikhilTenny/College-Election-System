@@ -1,3 +1,10 @@
+<?php
+include("php/config.php");
+session_start();
+	if(!isset($_SESSION['ad_Uname'])) {
+		header("Location:/project/index.php");
+	}
+?>
 <!DOCTYPE html>
 <html>
 <head> 
@@ -6,9 +13,13 @@
 	<link rel="stylesheet" type="text/css" href="css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="css/fontawesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/panel.css">
-	<link rel="stylesheet" type="text/css" href="css/adminacc.css">
+	<script type="text/javascript" src = "js/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/table.css">
 	<script src = "js/panel.js" type="text/javascript">
 	</script>
+	<!-- DataTable files -->
+	<link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"> 
+	<script type="text/javascript" src="DataTables/datatables.min.js"></script>
 </head> 
 <body>
 	<div class="container">
@@ -21,7 +32,7 @@
 		</div>	
 			<ul>
 				<li>
-					<a href="admin.php" >
+					<a href="admin.php" class= "dactive">
 						<span class="icon">	
 							<i class="fas fa-columns"></i>
 						</span>
@@ -29,7 +40,7 @@
 					</a>
 				</li>	
 				<li>
-					<a href="">
+					<a href="elections.html">
 						<span class="icon">	
 							<i class="fas fa-poll"></i>
 						</span>
@@ -37,7 +48,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="applicants.html">
+					<a href="applicants.php">
 						<span class="icon">	
 							<i class="far fa-sticky-note"></i>
 						</span>
@@ -45,7 +56,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="elections.html">
+					<a href="users.php">
 						<span class="icon">	
 							<i class="fas fa-users"></i>
 						</span>
@@ -69,34 +80,38 @@
 				<div class="toggle" onclick="minimise()">				
 				</div>
 				<div class="user">
-					<a href="adminacc.html"><img src="images/admin_photo.png"></a>
+					<a href="adminacc.php"><img src="images/admin_photo.png"></a>
 				</div>
 			</div>
-			<div class= "profile_Area">
-				<div class="p_Heading"><h2>Admin Profile</h2></div>
-				<form>
-					<div class="form_Area">
-						<div class="profile_details">
-							<label>First Name</label>
-							<input type="text" name="Fname" placeholder="None">
-						</div>
-						<div class="profile_details">
-							<label>Last Name</label>
-							<input type="text" name="FLname" placeholder="None">
-						</div>
-						<div class="profile_details">
-							<label>Current Password</label>
-							<input type="password" name="Pre_pass" >
-						</div>
-						<div class="profile_details">
-							<label>New Password</label>
-							<input type="password" name="New_pass" >
-						</div>	
-						<div class="profile_details">		
-							<input type="submit" name="btn" value="SAVE">
-						</div>
-					</div>
-				</form>	
+			<!-- Display List of Candidate Applicants -->
+			<div class="tables_Area">
+				<div class="t_Heading" style="display:block;">
+					<h2>Candidate Applicants</h2>
+					<table id="applicants_Table" class="table Candidates">
+						<thead>
+							<tr>
+								<th>Election</th>
+								<th>Name</th>
+								<th>Department</th>
+								<th>Year</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							
+						</tbody>
+					</table>
+				</div>
+				<script type="text/javascript">
+		$(document).ready(function() {
+    $('#applicants_Table').DataTable({
+    	'columnDefs': [{
+    		'targets':4,
+    		'orderable':false,
+    	}]
+    });
+} );	
+</script>
 			</div>
 		</div>
 	</div>

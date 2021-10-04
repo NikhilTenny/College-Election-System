@@ -1,3 +1,22 @@
+<?php
+	include("php/config.php");
+	session_start();
+	if(!isset($_SESSION['ad_Uname'])) {
+		header("Location:/project/index.php");
+	}
+	$id = $_SESSION['ad_Id'];
+	$qur = "select * from admin where (id = $id);";
+	if(!mysql_query($qur,$con)) {
+		die(mysql_error());
+	}
+	else {
+		$result = mysql_query($qur,$con);
+			$admin_Data = mysql_fetch_array($result);
+	}
+	
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head> 
@@ -6,7 +25,7 @@
 	<link rel="stylesheet" type="text/css" href="css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="css/fontawesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/panel.css">
-	<link rel="stylesheet" type="text/css" href="css/appview.css">
+	<link rel="stylesheet" type="text/css" href="css/adminacc.css">
 	<script src = "js/panel.js" type="text/javascript">
 	</script>
 </head> 
@@ -21,7 +40,7 @@
 		</div>	
 			<ul>
 				<li>
-					<a href="admin.php" class= "dactive">
+					<a href="admin.php" >
 						<span class="icon">	
 							<i class="fas fa-columns"></i>
 						</span>
@@ -29,7 +48,7 @@
 					</a>
 				</li>	
 				<li>
-					<a href="election.html">
+					<a href="elections.html">
 						<span class="icon">	
 							<i class="fas fa-poll"></i>
 						</span>
@@ -72,43 +91,44 @@
 					<a href="adminacc.php"><img src="images/admin_photo.png"></a>
 				</div>
 			</div>
-			<div class="candidate_Profile">
-				<div class="candidate">
-					<div class="c_Heading">
-						<span>Candidate Profile</span>
-						<a href="applicants.html"><i class="fas fa-arrow-left"></i></a>
+			<div class= "profile_Area">
+				<div class="p_Heading"><h2>Admin Profile</h2></div>
+				<div class="passError"><?php if(isset($_GET['admsg'])){
+											echo $_GET['admsg'];
+											echo $_GET['admsg'] = "";
+											}
+										?></div>
+				<form action="php/acc.php" method="POST">
+					<div  class="form_Area">
+						<div class="profile_details">
+							<label>First Name</label>
+							<input type="text" name="Fname" 
+							placeholder="<?php if(isset($admin_Data['First_name'])) {
+								echo $admin_Data['First_name']; }
+								else {
+									echo "";} ?>" >
+						</div>
+						<div class="profile_details">
+							<label>Last Name</label>
+							<input type="text" name="Lname" 
+							placeholder="<?php if(isset($admin_Data['Last_name'])) {
+								echo $admin_Data['Last_name'];}
+								else {
+									echo "";} ?>" >
+						</div>
+						<div class="profile_details">
+							<label>Current Password</label>
+							<input type="password" name="Pre_pass" >
+						</div>
+						<div class="profile_details">
+							<label>New Password</label>
+							<input type="password" name="New_pass" >
+						</div>	
+						<div class="profile_details">		
+							<input type="submit" name="btn" value="SAVE">
+						</div>
 					</div>
-					<form>
-					<div class="c_details">
-						<div>
-							<label>Name:</label>
-							<input type="text" class="c_Name" value="Mikesh" readonly>	
-						</div>
-						<div>
-							<label>Attendance:</label>
-							<input type="text" class="c_Attendance" value="95%" readonly>
-						</div>
-						<div>
-							<label>Department:</label>
-							<input type="text" class="c_Dept" value="MCA" readonly>
-						</div>
-						<div>
-							<label>Year:</label>
-							<input type="text" class="c_Year" value="THird" readonly>
-						</div>
-						<div>
-							<label>Description:</label>
-							<textarea rows="4" cols="30" class="c_Desc" readonly >Iam the best Student you can find in this entire college.Iam kinda good at everything  you know.Iam kinda good at everythin
-							</textarea>	
-						</div>
-					</div>
-					</form>
-					<div class="buttons">
-						<button class="c_btn decline">Decline</button>
-						<button class="c_btn accept">Accept</button>
-					</div>
-				</div>	
-				</div>
+				</form>	
 			</div>
 		</div>
 	</div>

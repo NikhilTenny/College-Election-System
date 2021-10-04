@@ -65,6 +65,7 @@ if($id != False) {
 		if($main_table == 'admin') {
 			session_start();
 			$_SESSION['ad_Uname'] = $uname;
+			$_SESSION['ad_Id'] = $id;
 			header("Location:/project/admin.php");
 		}
 	}

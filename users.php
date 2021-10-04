@@ -1,3 +1,12 @@
+<?php 
+	include('php/config.php'); 
+	include('php/onTablefunc.php');
+	session_start();
+	if(!isset($_SESSION['ad_Uname'])) {
+		header("Location:/project/index.php");
+	}
+?>
+
  <!DOCTYPE html>
 <html>
 <head> 
@@ -9,6 +18,7 @@
 	<link rel="stylesheet" type="text/css" href="css/table.css">
 	<script src = "js/panel.js" type="text/javascript"></script>
 	<script type="text/javascript" src = "js/jquery.js"></script>
+	<script type="text/javascript" src = "js/onTablefunc.js"></script>
 	<!-- DataTable files -->
 	<link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"> 
 	<script type="text/javascript" src="DataTables/datatables.min.js"></script>
@@ -43,7 +53,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="applicants.html">
+					<a href="applicants.php">
 						<span class="icon">	
 							<i class="far fa-sticky-note"></i>
 						</span>
@@ -51,7 +61,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="users.html">
+					<a href="users.php">
 						<span class="icon">	
 							<i class="fas fa-users"></i>
 						</span>
@@ -67,7 +77,7 @@
 						<span class="title">Sign Out</span>
 					</a>
 				</li>
-			</ul>
+			</ul>	
 		</div>
 		<div class="main">
 			<!-- Topbar containing navigation icon and admin image -->
@@ -75,9 +85,10 @@
 				<div class="toggle" onclick="minimise()">				
 				</div>
 				<div class="user">
-					<a href="adminacc.html"><img src="images/admin_photo.png"></a>
+					<a href="adminacc.php"><img src="images/admin_photo.png"></a>
 				</div>
 			</div> 
+
 			<div class="tables_Area">
 				<div class="t_Heading">
 					<h2>Students</h2>
@@ -94,7 +105,26 @@
 							</tr>
 						</thead>
 						<tbody>
-							
+							<?php 
+								$query = "select * from users;";
+								$result = mysql_query($query,$con);
+								while($data = mysql_fetch_array($result)) {
+									$department = getDepartment($data['Department_id'],$con);
+									$year = getYear($data['Year_id'],$con);
+							?>
+								<tr>
+									<td><?php echo $data['First_name'] ?></td>
+									<td><?php echo $data['Last_name'] ?></td>
+									<td><?php echo $department ?></td>
+									<td><?php echo $year ?></td>
+									<td><?php echo $data['Gender'] ?></td>
+									<td><?php echo $data['Email'] ?></td>
+
+									<td><a href="php/onTablefunc.php?id=<?php echo $data['id']; ?>"onclick="return confirm('Are you sure you want to delete this item?')"class="button Remove">Remove</a></td>
+								</tr>
+							<?php
+								}								
+							?>
 						</tbody>
 					</table>
 					<script type="text/javascript">
@@ -108,11 +138,10 @@
 } );	
 </script>		
 				</div>
-			</div>		
+			</div>
+					
 		</div>
 	</div>
 
 </body>
 </html>
-
-<!-- <td><button class="button Remove">Remove</button></td> -->

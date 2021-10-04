@@ -89,6 +89,7 @@
 .button.Remove {
 	background: #FF2626 ;
 	color: white;
+	text-decoration: none;
 }
 
 
@@ -97,6 +98,18 @@
  	background: #FF6B6B;
  }
 
+.error {
+	display: flex;
+	justify-content: center;
+}
+
+.error span {
+	font-size: 1.2em;
+	font-weight: 700;
+	color: red;
+
+	
+}
 /* ------------------------------------------------------------------------------------------------------- */
 /* Applicants  */
 .button.View {

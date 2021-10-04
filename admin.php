@@ -1,8 +1,10 @@
 <?php
-session_start();
-if(!isset($_SESSION['ad_Uname'])) {
-	header("Location:/project/index.php");
-}
+	include("php/config.php");
+	include("php/onTablefunc.php");
+	session_start();
+	if(!isset($_SESSION['ad_Uname'])) {
+		header("Location:/project/index.php");
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -42,7 +44,7 @@ if(!isset($_SESSION['ad_Uname'])) {
 					</a>
 				</li>
 				<li>
-					<a href="applicants.html">
+					<a href="applicants.php">
 						<span class="icon">	
 							<i class="far fa-sticky-note"></i>
 						</span>
@@ -50,7 +52,7 @@ if(!isset($_SESSION['ad_Uname'])) {
 					</a>
 				</li>
 				<li>
-					<a href="users.html">
+					<a href="users.php">
 						<span class="icon">	
 							<i class="fas fa-users"></i>
 						</span>
@@ -73,7 +75,7 @@ if(!isset($_SESSION['ad_Uname'])) {
 				<div class="toggle" onclick="minimise()">				
 				</div>
 				<div class="user">
-					<a href="adminacc.html"><img src="images/admin_photo.png"></a>
+					<a href="adminacc.php"><img src="images/admin_photo.png"></a>
 				</div>
 			</div>
 
@@ -163,18 +165,25 @@ if(!isset($_SESSION['ad_Uname'])) {
 				<div class="student">
 					<div class="table_Header">
 						<h2>Students</h2>
-						<a href="" class='btn'>View All</a>
+						<a href="users.php" class='btn'>View All</a>
 					</div>
 					<table class="user_Table">
 						<tbody>
-							<tr>
-								<td><div class="user_Default_img"><img src="images/student_img.png"></div></td>
-								<td><h4>Neji Hyuga</h4><span>Konoha</span></td>
-							</tr>
-							<tr>
-								<td><div class="user_Default_img"><img src="images/student_img.png"></div></td>
-								<td><h4>Madara Uchiha</h4><span>Konoha</span></td>
-							</tr>
+							<?php
+								$q = "select * from users order by id DESC limit 8;";
+								$u_Result = mysql_query($q,$con);
+								while($data = mysql_fetch_array($u_Result)) {
+									
+									$department = getDepartment($data['Department_id'],$con);
+							?>		
+									<tr>
+										<td><div class="user_Default_img"><img src="images/student_img.png"></div></td>
+										<td><h4><?php 
+											echo $data['First_name']." ".$data['Last_name'];
+												?></h4><span><?php echo $department; ?></span></td>
+							<?php					
+								}
+							?>
 						</tbody>
 					</table>
 				</div>
@@ -184,4 +193,3 @@ if(!isset($_SESSION['ad_Uname'])) {
 
 </body>
 </html>
-
