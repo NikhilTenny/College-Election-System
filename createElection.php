@@ -1,3 +1,11 @@
+<?php 
+	include('php/config.php'); 
+	include('php/onTablefunc.php');
+	session_start();
+	if(!isset($_SESSION['ad_Uname'])) {
+		header("Location:/project/index.php");
+	}
+?>
 <!DOCTYPE html>
 <html>
 <head> 
@@ -73,7 +81,7 @@
 			<!-- Election Details input area  -->
 			<div class="input_area">
 
-				<form>
+				<form action="php/createE.php" method="POST">
 				<div class="form_Area">
 					<span>Create Election</span>
 					<div class="election_Name">
@@ -122,6 +130,7 @@
 				</form>
 				
 			</div>
+			
 		</div>
 	</div>
 </body>

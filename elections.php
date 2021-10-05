@@ -1,3 +1,12 @@
+<?php 
+	include('php/config.php'); 
+	include('php/onTablefunc.php');
+	session_start();
+	if(!isset($_SESSION['ad_Uname'])) {
+		header("Location:/project/index.php");
+	}
+?>
+
 <!DOCTYPE html>
 <html>
 <head> 
@@ -86,7 +95,7 @@
 						
 					</div>
 					<div class="create_Button">
-						<a class="start_Election" href="createElection.html"> Create Election</a>
+						<a class="start_Election" href="createElection.php"> Create Election</a>
 					</div>
 					<div class="boxarea declared">
 						<div class="boxdetails declared">
@@ -115,7 +124,6 @@
 						</tr>
 					</thead>
 					<tbody>
-						<a href="jidjf.html">
 						<tr>
 							<td>dfdf</td>
 							<td>dfa</td>
@@ -125,9 +133,7 @@
 							<td>df</td>
 							<td>df</td>
 							<td><a class="button View">View</a></td>
-							
 						</tr>
-						</a>
 					</tbody>
 					</table>
 					<script type="text/javascript">
@@ -138,7 +144,6 @@
 					    		'orderable':false,
 					    	}]
 					    });
-
 						});
 					</script>
 				</div>

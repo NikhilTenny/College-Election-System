@@ -163,7 +163,6 @@
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript">
 			$( document ).ready(function() {
-
 			    	var already=<?php echo json_encode( $already) ?>;
 			    	if(already == "signup"){
 			    		print_sign_up();
