@@ -5,6 +5,13 @@
 	if(!isset($_SESSION['ad_Uname'])) {
 		header("Location:/project/index.php");
 	}
+
+	// Return the number of elections of specified status
+	function get_no_of_election($type,$con){
+		$Q = "select * from elections where Election_status = '$type'";
+		$Qobj = mysql_query($Q,$con);
+		return mysql_num_rows($Qobj);
+	}
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +49,7 @@
 					</a>
 				</li>	
 				<li>
-					<a href="elections.html">
+					<a href="elections.php">
 						<span class="icon">	
 							<i class="fas fa-poll"></i>
 						</span>
@@ -50,7 +57,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="applicants.html">
+					<a href="applicants.php">
 						<span class="icon">	
 							<i class="far fa-sticky-note"></i>
 						</span>
@@ -81,14 +88,18 @@
 				<div class="toggle" onclick="minimise()">				
 				</div>
 				<div class="user">
-					<a href="adminacc.html"><img src="images/admin_photo.png"></a>
+					<a href="adminacc.php"><img src="images/admin_photo.png"></a>
 				</div>
 			</div>
 			<div class="election_Management">
 				<div class="easy_Details">
 					<div class="boxarea ongoing">
 						<div class="boxdetails ongoing">
-							<span class="number ongoing">12</span>
+							<span class="number ongoing"><?php if(get_no_of_election(1,$con))
+																	echo get_no_of_election(1,$con);
+																	else 
+																	echo "0";	
+																?></span>
 							<span class="name">Ongoing Election</span>
 						</div>
 						<i class="fas fa-person-booth"></i>
@@ -99,7 +110,11 @@
 					</div>
 					<div class="boxarea declared">
 						<div class="boxdetails declared">
-								<span class="number declared">12</span>
+								<span class="number declared"><?php if(get_no_of_election(0,$con))
+																	echo get_no_of_election(0,$con);
+																	else 
+																	echo "0";	
+																?></span>
 								<span class="name">Declared Election</span>
 						</div>
 						<i class="fas fa-poll-h"></i>
@@ -120,27 +135,36 @@
 							<th>End Date</th>
 							<th>Voters</th>
 							<th>Status</th>
-							<th></th>
+						
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>dfdf</td>
-							<td>dfa</td>
-							<td>d</td>
-							<td>df</td>
-							<td>df</td>
-							<td>df</td>
-							<td>df</td>
-							<td><a class="button View">View</a></td>
-						</tr>
+						<?php 
+						$selectQ = "select * from elections;";
+						$result = mysql_query($selectQ,$con);
+						while($data = mysql_fetch_array($result)){
+							$department = getDepartment($data['Department_id'],$con);
+							$year = getYear($data['Year_id'],$con);
+							?>
+							<tr>
+								<td><?php echo $data['Name']; ?></td>
+								<td><?php echo $department; ?></td>
+								<td><?php echo $year; ?></td>
+								<td><?php echo $data['Start_date']; ?></td>
+								<td><?php echo $data['End_date']; ?></td>
+								<td><?php echo $data['Name']; ?></td>
+								<td><a class="button View">View</a></td>
+							</tr>	
+						<?php
+						}
+						?>
 					</tbody>
 					</table>
 					<script type="text/javascript">
 						$(document).ready(function(){
 							$('#elections_Table').DataTable({
 								'columnDefs': [{
-					    		'targets':4,
+					    		'targets':6,
 					    		'orderable':false,
 					    	}]
 					    });
@@ -152,3 +176,5 @@
 	</div>
 </body>
 </html>
+
+<td><a class="button View">View</a></td>

@@ -1,0 +1,113 @@
+  .election_detail_Area {
+ 	margin: 1em;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+
+ .elction_text_detail {
+	background: linear-gradient(#152D35,#476072);
+ 	display: flex;
+ 	flex-direction: column;
+ 	padding: 1.4em 1.7em 1em 1.7em ;
+ 	width: 550px;
+ 	color: white;
+ 	box-shadow: 0px 5px 15px grey;
+ }
+
+ .elction_text_detail .top {
+ 	display: flex;
+ 	justify-content: space-between;
+
+ }
+
+ .elction_text_detail .top i {
+ 	align-self: center;
+ 	color: white;
+ 	font-size: 2.5rem;
+ 	transition: 180ms ease-in-out;
+
+ }
+
+ .elction_text_detail .top i:hover {
+ 	color: #0eb1ee;
+ } 
+
+ .elction_text_detail .heading{
+ 	font-size: 2.4rem;
+ 	font-weight: bold;
+ 	padding-bottom:.2em ;
+ }
+
+.elction_text_detail .details_area {
+
+	font-size: 1.4rem;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 100%;
+	
+}
+label {
+	width: 100%;
+	font-size: 1.3rem;
+	font-weight: bold;
+
+}
+.details_area .eName {
+	display: flex;
+	flex-direction: column;
+	padding-bottom: .5em;
+}
+.details_area .eDepartment {
+	display: flex;
+	flex-direction: column;
+	padding-bottom: .5em;
+}
+
+.details_area .eYear {
+	display: flex;
+	flex-direction: column;
+	padding-bottom: .5em;
+}
+
+.details_area .voters {
+	display: flex;
+	flex-direction: column;
+	padding-bottom: .5em;
+}
+
+
+.details_area .start,
+.details_area .end {
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: .4em;
+}
+
+.details_area .start .start_date,
+.details_area .start .start_time {
+	display: flex;
+	flex-direction: column;
+	width: 48%;
+}
+
+.details_area .end .end_date,
+.details_area .end .end_time {
+	display: flex;
+	flex-direction: column;
+	width: 48%;
+}
+
+.details_area span {
+	background: white;
+	color: black;
+	padding: .2em .3em;
+	border-radius: 5px;
+}
+
+
+.details_area a {
+	font-size: 1.4rem;
+	color: red;
+}
+

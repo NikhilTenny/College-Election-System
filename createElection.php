@@ -36,7 +36,7 @@
 					</a>
 				</li>	
 				<li>
-					<a href="elections.html">
+					<a href="elections.php">
 						<span class="icon">	
 							<i class="fas fa-poll"></i>
 						</span>
@@ -44,7 +44,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="applicants.html">
+					<a href="applicants.php">
 						<span class="icon">	
 							<i class="far fa-sticky-note"></i>
 						</span>
@@ -84,9 +84,15 @@
 				<form action="php/createE.php" method="POST">
 				<div class="form_Area">
 					<span>Create Election</span>
+					<span class="error"><?php 
+										if(isset($_GET["cr_Reply"]))
+											echo $_GET['cr_Reply'];
+											$_GET['cr_Reply'] = "";
+
+												 ?></span>
 					<div class="election_Name">
 						<label>Election Name:</label>
-						<input type="text" name="eletion_Name" placeholder="">
+						<input type="text" name="election_Name" placeholder="">
 					</div>
 					<div class="dropDown">
 						<select name="Department">

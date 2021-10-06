@@ -17,7 +17,6 @@
 
 
 .input_area .form_Area {
-	
 	width: 550px;
 	min-width: 300px;
 
@@ -29,6 +28,11 @@
 	padding-bottom: .3em;
 	font-weight: bold;
 	color: white;
+}
+
+.input_area .form_Area .error {
+	font-size: 1.05rem;
+	color: orange;
 }
 
 .input_area .form_Area div {

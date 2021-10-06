@@ -15,8 +15,11 @@
 	<link rel="stylesheet" type="text/css" href="css/fontawesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/panel.css">
 	<link rel="stylesheet" type="text/css" href="css/electionView.css">
-	<script src = "js/panel.js" type="text/javascript">
-	</script>
+	<link rel="stylesheet" type="text/css" href="css/table.css">
+	<script src = "js/panel.js" type="text/javascript"></script>
+	<!-- DataTable files -->
+	<link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"> 
+	<script type="text/javascript" src="DataTables/datatables.min.js"></script>
 </head> 
 <body>
 	<div class="container">
@@ -77,9 +80,87 @@
 				</div>
 				<div class="user">
 					<a href="adminacc.php"><img src="images/admin_photo.png"></a>
+				</div>					
+			</div>
+			<div class="election_detail_Area">
+				<div class="elction_text_detail">
+					<div class="top">
+						<span class="heading">Details</span>
+						<a href="elections.php"><i class="fas fa-arrow-left"></i></a>
+					</div>
+					<div class="details_area">
+						<div class="eName">
+							<label>Name:</label>
+							<span>Main Election</span>
+						</div>
+						<div class="eDepartment">
+							<label>Department:</label>
+							<span>BCA</span>
+						</div>
+						<div class="eYear">
+							<label>Year:</label>
+							<span>First</span>
+						</div>
+						<div class="voters">
+							<label>Voters:</label>
+							<span>34</span>
+						</div>
+						<div class="start">
+							<div class="start_date">
+								<label>Start Date:</label>
+								<span>2001-2-3</span>
+							</div>
+							<div class="start_time">
+								<label>Start Time:</label>
+								<span>12:43:3</span>
+							</div>
+						</div>
+						<div class="end">
+							<div class="end_date">
+								<label>End Date:</label>
+								<span>2001-2-3</span>
+							</div>
+							<div class="end_time">
+								<label>End Time:</label>
+								<span>12:43:3</span>
+							</div>
+						</div>
+						<div class="cancel">
+							<a href="">Cancel Election</a>
+						</div>
+					</div>
 				</div>
 			</div>
-			
+				<div class="tables_Area">
+				<div class="t_Heading" style="display:block;">
+					<h2>Candidate Applicants</h2>
+					<table id="applicants_Table" class="table Candidates">
+						<thead>
+							<tr>
+								<th>Election</th>
+								<th>Name</th>
+								<th>Department</th>
+								<th>Year</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							
+						</tbody>
+					</table>
+				</div>
+				<script type="text/javascript">
+		$(document).ready(function() {
+    $('#applicants_Table').DataTable({
+    	'columnDefs': [{
+    		'targets':4,
+    		'orderable':false,
+    	}]
+    });
+} );	
+</script>
+			</div>
+						
 		</div>
 	</div>
 

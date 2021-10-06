@@ -14,10 +14,11 @@
 	<link rel="stylesheet" type="text/css" href="css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="css/fontawesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/panel.css">
-	<script src = "js/panel.js" type="text/javascript">
-	</script>
+	<link rel="stylesheet" type="text/css" href="css/admin.css">
+	<script src = "js/panel.js" type="text/javascript"></script>
+	<script src = "js/onTablefunc.js" type="text/javascript"></script>
 </head> 
-<body>
+<body onload="statuscolor()">
 	<div class="container">
 		<div class="navigation">
 		<div class="admin_icon">	
@@ -83,7 +84,7 @@
 				<div class="election">
 					<div class="table_Header">
 						<h2>Elections</h2>
-						<a href="" class='btn'>View All</a>
+						<a href="elections.php" class='btn'>View All</a>
 					</div>
 					<table class="election_Table">
 						<thead>
@@ -96,70 +97,37 @@
 							</tr>	
 						</thead>
 						<tbody>
+						<?php 
+								$eQ = "select * from elections order by id DESC limit 7;";
+								$eQ_ob = mysql_query($eQ,$con);
+								while($eData = mysql_fetch_array($eQ_ob)) {
+									$department = getDepartment($eData['Department_id'],$con);
+									$year = getYear($eData['Year_id'],$con);
+						?>
 							<tr>
-								<td>First BCA</td>
-								<td>BCA</td>
-								<td>First</td>
-								<td>35</td>
-								<td><span class="status Ongoing">Ongoing</span></td>
+							<td><?php echo $eData['Name'];?></td>
+							<td><?php echo $department; ?></td>
+							<td><?php echo $year;?></td>
+							<td><?php echo $eData['Voters'];?></td>
+							<td class="status"><span class="<?php if($eData['Election_status'] == 0)
+										echo 'Declared';
+									  elseif ($eData['Election_status'] == 1) 
+									  	echo "Ongoing";
+									  else 
+									  	echo "Finished";	?>"><?php if($eData['Election_status'] == 0)
+										echo 'Declared';
+									  elseif ($eData['Election_status'] == 1) 
+									  	echo "Ongoing";
+									  else 
+									  	echo "Finished";	?></span></td>
+									  
 							</tr>
-							<tr>
-								<td>First BCA</td>
-								<td>MCA</td>
-								<td>Second</td>
-								<td>29</td>
-								<td><span class="status Declared">Declared</span></td>
-							</tr>
-							<tr>
-								<td>First BCA</td>
-								<td>BCA</td>
-								<td>Third</td>
-								<td>86</td>
-								<td><span class="status Finished">Finished</span></td>
-							</tr>
-							<tr>
-								<td>First BCA</td>
-								<td>BCA</td>
-								<td>Third</td>
-								<td>86</td>
-								<td><span class="status Finished">Finished</span></td>
-							</tr>
-							<tr>
-								<td>First BCA</td>
-								<td>BCA</td>
-								<td>Third</td>
-								<td>86</td>
-								<td><span class="status Finished">Finished</span></td>
-							</tr>
-							<tr>
-								<td>First BCA</td>
-								<td>BCA</td>
-								<td>Third</td>
-								<td>86</td>
-								<td><span class="status Finished">Finished</span></td>
-							</tr>
-							<tr>
-								<td>First BCA</td>
-								<td>BCA</td>
-								<td>Third</td>
-								<td>86</td>
-								<td><span class="status Finished">Finished</span></td>
-							</tr>
-							<tr>
-								<td>First BCA</td>
-								<td>BCA</td>
-								<td>Third</td>
-								<td>86</td>
-								<td><span class="status Finished">Finished</span></td>
-							</tr>
-							<tr>
-								<td>First BCA</td>
-								<td>BCA</td>
-								<td>Third</td>
-								<td>86</td>
-								<td><span class="status Finished">Finished</span></td>
-							</tr>
-						</tbody>
+
+							  
+						<?php 
+							}
+							?>	
+
 					</table>
 				</div>
 				<div class="student">

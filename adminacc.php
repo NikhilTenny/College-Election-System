@@ -48,7 +48,7 @@
 					</a>
 				</li>	
 				<li>
-					<a href="elections.html">
+					<a href="elections.php">
 						<span class="icon">	
 							<i class="fas fa-poll"></i>
 						</span>
