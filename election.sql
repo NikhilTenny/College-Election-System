@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 06, 2021 at 06:04 PM
+-- Generation Time: Oct 07, 2021 at 09:58 AM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -142,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `elections` (
   PRIMARY KEY (`id`),
   KEY `elections_dpt` (`Department_id`),
   KEY `elections_year` (`Year_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=35 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=36 ;
 
 --
 -- Dumping data for table `elections`
@@ -157,7 +157,8 @@ INSERT INTO `elections` (`id`, `Name`, `Department_id`, `Year_id`, `Election_sta
 (31, 'mabaga', 3, 1, 2, '2021-10-04', '2021-10-06', '18:56:00', '19:57:00', 1),
 (32, 'tttttt', 1, 2, 2, '2021-10-06', '2021-10-21', '18:07:00', '20:07:00', 5),
 (33, 'ddfdfasdf', 3, 1, 0, '2021-10-05', '2021-10-07', '19:15:00', '17:19:00', 1),
-(34, 'testing', 3, 1, 0, '2021-10-06', '2021-10-06', '18:15:00', '23:15:00', 1);
+(34, 'testing', 3, 1, 0, '2021-10-06', '2021-10-06', '18:15:00', '23:15:00', 1),
+(35, 'First', 3, 1, 0, '2021-10-08', '2021-10-10', '12:48:00', '13:48:00', 0);
 
 -- --------------------------------------------------------
 
@@ -172,47 +173,6 @@ CREATE TABLE IF NOT EXISTS `result` (
   KEY `M_win_id` (`M_win_id`),
   KEY `F_win_id` (`F_win_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `Email` varchar(30) NOT NULL,
-  `First_name` varchar(15) NOT NULL,
-  `Last_name` varchar(15) NOT NULL,
-  `Gender` varchar(10) NOT NULL,
-  `Department_id` int(11) unsigned NOT NULL,
-  `Year_id` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `users_dpt` (`Department_id`),
-  KEY `users_yr` (`Year_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=52 ;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `Email`, `First_name`, `Last_name`, `Gender`, `Department_id`, `Year_id`) VALUES
-(35, 'Vena@gmail.com', 'Vena ', 'clawson', 'Female', 1, 2),
-(37, 'mila@gmail.com', 'Mila', 'Tsao', 'Female', 1, 1),
-(38, 'Joy@gmail.com', 'Joya', 'Knotts', 'Female', 1, 2),
-(39, 'martin@gmail.com', 'Martin', 'Luther', 'Male', 3, 2),
-(40, 'lepord@gmail.com', 'lepord', 'king', 'Female', 1, 3),
-(41, 'ali@gmail.com', 'ali', 'hussain', 'Male', 3, 2),
-(42, 'fugitura@gmail.com', 'fugitura', 'admiral', 'Male', 3, 3),
-(43, 'nami@gmail.com', 'Nami', 'Nav', 'Female', 1, 2),
-(44, 'robin@gmail.com', 'Robin', 'ohora', 'Female', 1, 2),
-(45, 'ussop@gmail.com', 'Ussop', 'snipper', 'Male', 1, 1),
-(46, 'javin@gmail.com', 'javin', 'mathew', 'Male', 3, 2),
-(47, 'anandhukrishna007@gmail.com', 'anandhu', 'krishna', 'Male', 3, 1),
-(48, 'nikhildfdf@gmail.com', 'dsafsdfsd', 'df', 'Male', 1, 2),
-(49, 'jaja@gmail.com', 'jaja', 'jijij', 'Male', 3, 2),
-(50, 'nikhifgfgl@gmail.com', 'gygyg', 'hjhj', 'Male', 3, 2),
-(51, 'jijdifj@gmail.com', 'manag', 'ogger', 'Male', 3, 2);
 
 -- --------------------------------------------------------
 
@@ -246,7 +206,60 @@ INSERT INTO `user_login` (`id`, `Password`) VALUES
 (48, '1234'),
 (49, 'jiji'),
 (50, '1212'),
-(51, 'asdf');
+(51, 'asdf'),
+(52, '123123'),
+(53, 'asdf'),
+(55, 'asdf'),
+(56, 'erer'),
+(57, '12345'),
+(58, 'dfdf');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `Email` varchar(30) NOT NULL,
+  `First_name` varchar(15) NOT NULL,
+  `Last_name` varchar(15) NOT NULL,
+  `Gender` varchar(10) NOT NULL,
+  `Department_id` int(11) unsigned NOT NULL,
+  `Year_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `users_dpt` (`Department_id`),
+  KEY `users_yr` (`Year_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=59 ;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `Email`, `First_name`, `Last_name`, `Gender`, `Department_id`, `Year_id`) VALUES
+(35, 'Vena@gmail.com', 'Vena ', 'clawson', 'Female', 1, 2),
+(37, 'mila@gmail.com', 'Mila', 'Tsao', 'Female', 1, 1),
+(38, 'Joy@gmail.com', 'Joya', 'Knotts', 'Female', 1, 2),
+(39, 'martin@gmail.com', 'Martin', 'Luther', 'Male', 3, 2),
+(40, 'lepord@gmail.com', 'lepord', 'king', 'Female', 1, 3),
+(41, 'ali@gmail.com', 'ali', 'hussain', 'Male', 3, 2),
+(42, 'fugitura@gmail.com', 'fugitura', 'admiral', 'Male', 3, 3),
+(43, 'nami@gmail.com', 'Nami', 'Nav', 'Female', 1, 2),
+(44, 'robin@gmail.com', 'Robin', 'ohora', 'Female', 1, 2),
+(45, 'ussop@gmail.com', 'Ussop', 'snipper', 'Male', 1, 1),
+(46, 'javin@gmail.com', 'javin', 'mathew', 'Male', 3, 2),
+(47, 'anandhukrishna007@gmail.com', 'anandhu', 'krishna', 'Male', 3, 1),
+(48, 'nikhildfdf@gmail.com', 'dsafsdfsd', 'df', 'Male', 1, 2),
+(49, 'jaja@gmail.com', 'jaja', 'jijij', 'Male', 3, 2),
+(50, 'nikhifgfgl@gmail.com', 'gygyg', 'hjhj', 'Male', 3, 2),
+(51, 'jijdifj@gmail.com', 'manag', 'ogger', 'Male', 3, 2),
+(52, 'jijij@gmail.com', 'jijij', 'jijij', 'Male', 1, 2),
+(53, 'sdfasdfasdf', 'asdfsadf', 'asdfsadf', 'Male', 6, 1),
+(55, 'SADasd', 'asdijf', 'asdfsa', 'Male', 6, 1),
+(56, 'ajal@gmail.com', 'Ajal', 'Jose', 'Male', 4, 2),
+(57, 'nikhiltenny@gmail.com', 'Nikhil', 'Tenny', 'Male', 1, 1),
+(58, 'ajail@gmail.com', 'dfdf', 'dfd', 'Male', 3, 2);
 
 -- --------------------------------------------------------
 
@@ -262,7 +275,7 @@ CREATE TABLE IF NOT EXISTS `voters_list` (
   PRIMARY KEY (`id`),
   KEY `voters_list_user_id` (`User_id`),
   KEY `voters_list_election_id` (`Election_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=64 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=65 ;
 
 --
 -- Dumping data for table `voters_list`
@@ -299,7 +312,8 @@ INSERT INTO `voters_list` (`id`, `User_id`, `Election_id`, `Vote_status`) VALUES
 (60, 44, 32, 0),
 (61, 48, 32, 0),
 (62, 47, 33, 0),
-(63, 47, 34, 0);
+(63, 47, 34, 0),
+(64, 47, 35, 0);
 
 -- --------------------------------------------------------
 
@@ -361,6 +375,12 @@ ALTER TABLE `result`
   ADD CONSTRAINT `result_ibfk_2` FOREIGN KEY (`F_win_id`) REFERENCES `candidate` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Constraints for table `user_login`
+--
+ALTER TABLE `user_login`
+  ADD CONSTRAINT `user_login_ibfk_1` FOREIGN KEY (`id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
 -- Constraints for table `users`
 --
 ALTER TABLE `users`
@@ -368,17 +388,21 @@ ALTER TABLE `users`
   ADD CONSTRAINT `users_yr` FOREIGN KEY (`Year_id`) REFERENCES `year` (`id`);
 
 --
--- Constraints for table `user_login`
---
-ALTER TABLE `user_login`
-  ADD CONSTRAINT `user_login_ibfk_1` FOREIGN KEY (`id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
---
 -- Constraints for table `voters_list`
 --
 ALTER TABLE `voters_list`
   ADD CONSTRAINT `voters_list_election_id` FOREIGN KEY (`Election_id`) REFERENCES `elections` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `voters_list_user_id` FOREIGN KEY (`User_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+--
+-- Database: `ndb`
+--
+CREATE DATABASE IF NOT EXISTS `ndb` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `ndb`;
+--
+-- Database: `test`
+--
+CREATE DATABASE IF NOT EXISTS `test` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `test`;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

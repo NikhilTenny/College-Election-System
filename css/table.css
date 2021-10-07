@@ -115,6 +115,7 @@
 .button.View {
 	background: #3498DB;
 	color: white;
+	text-decoration: none;
 }
 
 .button.View:hover {

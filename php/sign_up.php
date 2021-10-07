@@ -9,6 +9,8 @@ $yr = $_POST['Year'];
 $pswd = $_POST['Password'];
 $pswdre = $_POST['Passwordre'];
 
+
+
 // Check if the an account is already in the database
 function user_exist_check($email,$con) {
 	$emailQ = "select Email from users where (Email = '$email');";
@@ -24,6 +26,10 @@ function user_exist_check($email,$con) {
 // Return the  yearid 
 function getyrid($year,$con) {
 	$getyr = mysql_query("select id from year where (Year_name = '$year')",$con);
+	if(!mysql_query("select id from year where (Year_name = '$year')",$con)) {
+		$flag = 1;
+		return 0;
+	}
 	$yrid = mysql_fetch_array($getyr);
 	return $yrid[0]; 
 }
@@ -31,13 +37,21 @@ function getyrid($year,$con) {
 // Return the department id
 function getdeptid($dept,$con) {
 	$getdept = mysql_query("select id from department where (Department_name = '$dept')",$con);
+	if(! mysql_query("select id from department where (Department_name = '$dept')",$con)) {
+		$flag = 1;
+		return 0;
+	}
 	$deptid = mysql_fetch_array($getdept);
-	return $deptid[0];
+	return $deptid['id'];
 }
 
 // Return id of user
 function getid($email,$con) {
 	$idQ = mysql_query("select id from users where (Email = '$email');",$con);
+	if(!mysql_query("select id from users where (Email = '$email');",$con)) {
+		$flag = 1;
+		return 0;
+	}
 	$id = mysql_fetch_array($idQ);
 	return $id[0];
 } 
@@ -52,16 +66,22 @@ if($_POST["subbtn"] == "SIGN UP") {
 	if(user_exist_check($email,$con) == False) {
 		$yrid = getyrid($yr,$con);
 		$deptid = getdeptid($dept,$con);
-
-		$signupquery = "insert into users (Email,First_name,Last_name,Gender,Department_id,Year_id) values
-										  ('$email','$fname','$lname','$gender',$deptid,$yrid);"; 
-		mysql_query($signupquery,$con); 								  
-		$id = getid($email,$con);
-		log_table_insert($id,$con,$pswd);
-		session_start();
-		$_SESSION['data']['window'] = "users";
-		header("Location:/project/index.php");
-			
+		if(($yrid != 0)and ($deptid != 0)){
+			$signupquery = "insert into users (Email,First_name,Last_name,Gender,Department_id,Year_id) values
+											  ('$email','$fname','$lname','$gender',$deptid,$yrid);"; 
+			mysql_query($signupquery,$con); 								  
+			$id = getid($email,$con);
+			log_table_insert($id,$con,$pswd);
+			session_start();
+			$_SESSION['data']['window'] = "users";
+			header("Location:/project/index.php");
+		}
+		else {
+			session_start();
+			$_SESSION['data']['window'] = "signup";
+			$_SESSION['data']['s_message'] = "An error occured";
+			header("Location:/project/index.php");
+		}
 	}
 	else {
 		//if username already exists 

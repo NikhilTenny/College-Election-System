@@ -135,7 +135,6 @@
 							<th>End Date</th>
 							<th>Voters</th>
 							<th>Status</th>
-						
 						</tr>
 					</thead>
 					<tbody>
@@ -143,6 +142,7 @@
 						$selectQ = "select * from elections;";
 						$result = mysql_query($selectQ,$con);
 						while($data = mysql_fetch_array($result)){
+							$_SESSION['ele_id'] = $data['id'];
 							$department = getDepartment($data['Department_id'],$con);
 							$year = getYear($data['Year_id'],$con);
 							?>
@@ -153,7 +153,7 @@
 								<td><?php echo $data['Start_date']; ?></td>
 								<td><?php echo $data['End_date']; ?></td>
 								<td><?php echo $data['Name']; ?></td>
-								<td><a class="button View">View</a></td>
+								<td><a href="electionView.php" class="button View">View</a></td>
 							</tr>	
 						<?php
 						}

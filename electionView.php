@@ -5,21 +5,28 @@
 	if(!isset($_SESSION['ad_Uname'])) {
 		header("Location:/project/index.php");
 	}
+	$eid = $_SESSION['ele_id'];
+	echo $eid;
+	$getQ = "select * from elections where id = '$eid';";
+
 ?>
 <!DOCTYPE html>
 <html>
 <head> 
 	<meta charset="utf-8">
 	<title></title> 
+	<script type="text/javascript" src = "js/jquery.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="css/fontawesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/panel.css">
 	<link rel="stylesheet" type="text/css" href="css/electionView.css">
 	<link rel="stylesheet" type="text/css" href="css/table.css">
 	<script src = "js/panel.js" type="text/javascript"></script>
+	
 	<!-- DataTable files -->
-	<link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"> 
-	<script type="text/javascript" src="DataTables/datatables.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
+ 
+<script type="text/javascript" src="DataTables/datatables.min.js"></script>
 </head> 
 <body>
 	<div class="container">
@@ -40,7 +47,7 @@
 					</a>
 				</li>	
 				<li>
-					<a href="elections.html">
+					<a href="elections.php">
 						<span class="icon">	
 							<i class="fas fa-poll"></i>
 						</span>
@@ -132,35 +139,36 @@
 				</div>
 			</div>
 				<div class="tables_Area">
-				<div class="t_Heading" style="display:block;">
-					<h2>Candidate Applicants</h2>
-					<table id="applicants_Table" class="table Candidates">
-						<thead>
-							<tr>
-								<th>Election</th>
-								<th>Name</th>
-								<th>Department</th>
-								<th>Year</th>
-								<th></th>
-							</tr>
-						</thead>
-						<tbody>
-							
-						</tbody>
-					</table>
-				</div>
-				<script type="text/javascript">
-		$(document).ready(function() {
+					<div class="t_Heading" style="display:block;">
+						<h2>Candidate Applicants</h2>
+						<table id="applicants_Table" class="table Candidates">
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Department</th>
+									<th>Year</th>	
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Suresh</td>
+									<td>MCA</td>
+									<td>Second</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>		
+		<script type="text/javascript">
+		$(document).ready( function () {
     $('#applicants_Table').DataTable({
     	'columnDefs': [{
-    		'targets':4,
+    		'targets':2,
     		'orderable':false,
     	}]
     });
-} );	
-</script>
-			</div>
-						
+});	
+</script>						
 		</div>
 	</div>
 

@@ -117,9 +117,9 @@
 			<div class = 'Sign-form-area'>
 				<h1 class = Sign-text> SIGN UP</h1>
 				<span class="error-msg" > <?php echo (isset( $_SESSION['data']['s_message']))? $_SESSION['data']['s_message']:"" ?></span>	
-				<input type="text" name="Fname" placeholder="First Name" value="<?php echo (isset($_SESSION ['data']['Fname'])) ? $_SESSION['data']['Fname'] : '' ?>"   required>
-				<input type="text" name="Lname" placeholder="Last Name" value="<?php echo (isset($_SESSION['data']['Lname'])) ? $_SESSION['data']['Lname'] : '' ?>" required>
-				<input id="sign-uname" type="text" name="Eid" placeholder="Email ID" required>
+				<input type="text" name="Fname" placeholder="First Name" value="<?php echo (isset($_SESSION ['data']['Fname'])) ? $_SESSION['data']['Fname'] : '' ?>"  autocomplete="off" required>
+				<input type="text" name="Lname" placeholder="Last Name" value="<?php echo (isset($_SESSION['data']['Lname'])) ? $_SESSION['data']['Lname'] : '' ?>" autocomplete="off" required>
+				<input id="sign-uname" type="text" name="Eid" placeholder="Email ID" autocomplete="off" required>
 							
 				<div class="Drop-area">
 					<select name="Gender" required >
@@ -135,10 +135,10 @@
 						 <?php if(isset($_SESSION['data']['Department']) && $_SESSION['data']['Department'] == "BCA") { echo 'selected = "selected"';} ?>  > BCA </option>
 						<option value="MCA"
 						<?php if(isset($_SESSION['data']['Department']) && $_SESSION['data']['Department'] == "MCA") { echo 'selected = "selected"';} ?> > MCA </option>
-						<option value="Bcom"
-						<?php if(isset($_SESSION['data']['Department']) && $_SESSION['data']['Department'] == "Bcom") { echo 'selected = "selected"';} ?> > Bcom </option>
-						<option value="Mcom"
-						<?php if(isset($_SESSION['data']['Department']) && $_SESSION['data']['Department'] == "Mcom") { echo 'selected = "selected"';} ?> > Mcom </option>
+						<option value="B.com"
+						<?php if(isset($_SESSION['data']['Department']) && $_SESSION['data']['Department'] == "B.com") { echo 'selected = "selected"';} ?> > B.com </option>
+						<option value="M.com"
+						<?php if(isset($_SESSION['data']['Department']) && $_SESSION['data']['Department'] == "M.com") { echo 'selected = "selected"';} ?> > M.com </option>
 					</select>
 					 <select class="year-drop" name="Year" required>
 						<option disabled selected>Year</option>
