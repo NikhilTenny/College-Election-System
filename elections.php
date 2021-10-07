@@ -16,7 +16,7 @@
 
 <!DOCTYPE html>
 <html>
-<head> 
+<head>  
 	<meta charset="utf-8">
 	<title></title> 
 	<link rel="stylesheet" type="text/css" href="css/all.min.css">
@@ -141,10 +141,10 @@
 						<?php 
 						$selectQ = "select * from elections;";
 						$result = mysql_query($selectQ,$con);
-						while($data = mysql_fetch_array($result)){
-							$_SESSION['ele_id'] = $data['id'];
+						while($data = mysql_fetch_array($result)){	
 							$department = getDepartment($data['Department_id'],$con);
 							$year = getYear($data['Year_id'],$con);
+							$voters = get_No_of_voters($data['id'],$con);
 							?>
 							<tr>
 								<td><?php echo $data['Name']; ?></td>
@@ -152,8 +152,8 @@
 								<td><?php echo $year; ?></td>
 								<td><?php echo $data['Start_date']; ?></td>
 								<td><?php echo $data['End_date']; ?></td>
-								<td><?php echo $data['Name']; ?></td>
-								<td><a href="electionView.php" class="button View">View</a></td>
+								<td><?php echo $voters; ?></td>
+								<td><a href="electionView.php?eid=<?php echo $data['id']; ?>"  class="button View">View</a></td>
 							</tr>	
 						<?php
 						}
@@ -177,4 +177,3 @@
 </body>
 </html>
 
-<td><a class="button View">View</a></td>

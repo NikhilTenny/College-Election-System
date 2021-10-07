@@ -5,10 +5,24 @@
 	if(!isset($_SESSION['ad_Uname'])) {
 		header("Location:/project/index.php");
 	}
-	$eid = $_SESSION['ele_id'];
-	echo $eid;
-	$getQ = "select * from elections where id = '$eid';";
+	// Incase of any error go back to the previous page
+	function errormsg() {
+		header("Location:elections.php?msg=Something went wrong!");
+	}
 
+	$eid = $_GET['eid'];
+	$getQ = "select * from elections where id = '$eid';";
+	if(!($getQ_obj = mysql_query($getQ,$con))) 
+		errormsg();
+	else {
+		$eData = mysql_fetch_array($getQ_obj);
+	}
+
+	$dpt = getDepartment($eData['Department_id'],$con);
+	$yr = getYear($eData['Year_id'],$con);
+	$votersNo = get_No_of_voters($eid,$con);  
+	if(!$votersNo) 
+		errormsg();
 ?>
 <!DOCTYPE html>
 <html>
@@ -93,75 +107,88 @@
 				<div class="elction_text_detail">
 					<div class="top">
 						<span class="heading">Details</span>
+						<span class="error"></span>
 						<a href="elections.php"><i class="fas fa-arrow-left"></i></a>
 					</div>
 					<div class="details_area">
 						<div class="eName">
 							<label>Name:</label>
-							<span>Main Election</span>
+							<span><?php echo $eData['Name']; ?></span>
 						</div>
 						<div class="eDepartment">
 							<label>Department:</label>
-							<span>BCA</span>
+							<span><?php echo $dpt; ?></span>
 						</div>
 						<div class="eYear">
 							<label>Year:</label>
-							<span>First</span>
+							<span><?php echo $yr; ?></span>
 						</div>
 						<div class="voters">
 							<label>Voters:</label>
-							<span>34</span>
+							<span><?php echo $votersNo; ?></span>
 						</div>
 						<div class="start">
 							<div class="start_date">
 								<label>Start Date:</label>
-								<span>2001-2-3</span>
+								<span><?php echo $eData['Start_date']; ?></span>
 							</div>
 							<div class="start_time">
 								<label>Start Time:</label>
-								<span>12:43:3</span>
+								<span><?php echo $eData['Start_time']; ?></span>
 							</div>
 						</div>
 						<div class="end">
 							<div class="end_date">
 								<label>End Date:</label>
-								<span>2001-2-3</span>
+								<span><?php echo $eData['End_date']; ?></span>
 							</div>
 							<div class="end_time">
 								<label>End Time:</label>
-								<span>12:43:3</span>
+								<span><?php echo $eData['End_time']; ?></span>
 							</div>
 						</div>
 						<div class="cancel">
-							<a href="">Cancel Election</a>
+							<a href="php/onTablefunc.php?election_Id=<?php echo $eid; ?>"onclick="return confirm('Are you sure you want to cancel this election?')">Cancel Election</a>
 						</div>
 					</div>
 				</div>
 			</div>
 				<div class="tables_Area">
 					<div class="t_Heading" style="display:block;">
-						<h2>Candidate Applicants</h2>
-						<table id="applicants_Table" class="table Candidates">
+						<h2>Voters List</h2>
+						<table id="voters_Table" class="table Voters">
 							<thead>
 								<tr>
-									<th>Name</th>
-									<th>Department</th>
-									<th>Year</th>	
+									<th>First name</th>
+									<th>Last name</th>
+									<th>Gender</th>	
 								</tr>
 							</thead>
 							<tbody>
+								<?php 
+									$vot_ob = mysql_query("select * from voters_list where Election_id = '$eid';",$con);
+									if(!$vot_ob)
+										errormsg();
+															
+									while($data = mysql_fetch_array($vot_ob)) {
+										$stuData = getStuData($data['User_id'],$con);
+									
+								?>
 								<tr>
-									<td>Suresh</td>
-									<td>MCA</td>
-									<td>Second</td>
+									<td><?php echo $data['id']; ?></td>
+									<td><?php echo $stuData['Last_name']; ?></td>
+									<td><?php echo $stuData['Gender']; ?></td>
 								</tr>
+								<?php 
+									}
+								?>					
 							</tbody>
 						</table>
 					</div>
 				</div>		
 		<script type="text/javascript">
 		$(document).ready( function () {
-    $('#applicants_Table').DataTable({
+    $('#voters_Table').DataTable({
     	'columnDefs': [{
     		'targets':2,
     		'orderable':false,
