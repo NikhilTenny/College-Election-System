@@ -6,6 +6,7 @@
 	if(!isset($_SESSION['ad_Uname'])) {
 		header("Location:/project/index.php");
 	}
+	include('php/elecheck.php');
 ?>
 
  <!DOCTYPE html>
@@ -122,7 +123,7 @@
 									<td><a href="php/onTablefunc.php?id=<?php echo $data['id']; ?>"onclick="return confirm('Are you sure you want to delete this item?')"class="button Remove">Remove</a></td>
 								</tr>
 							<?php
-								}								
+								}					 			
 							?>
 						</tbody>
 					</table>

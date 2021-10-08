@@ -75,7 +75,7 @@
 				<div class="toggle" onclick="minimise()">				
 				</div>
 				<div class="user">
-					<a href="adminacc.html"><img src="images/admin_photo.png"></a>
+					<a href="adminacc.php"><img src="images/admin_photo.png"></a>
 				</div>
 			</div>
 			<!-- Election Details input area  -->

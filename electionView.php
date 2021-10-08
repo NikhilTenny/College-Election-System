@@ -1,6 +1,7 @@
 <?php
 	include("php/config.php");
 	include("php/onTablefunc.php");
+	include('php/elecheck.php');
 	session_start();
 	if(!isset($_SESSION['ad_Uname'])) {
 		header("Location:/project/index.php");
@@ -162,6 +163,7 @@
 									<th>First name</th>
 									<th>Last name</th>
 									<th>Gender</th>	
+									<th>Vote Status</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -172,12 +174,15 @@
 															
 									while($data = mysql_fetch_array($vot_ob)) {
 										$stuData = getStuData($data['User_id'],$con);
-									
 								?>
 								<tr>
-									<td><?php echo $data['id']; ?></td>
+									<td><?php echo $stuData['First_name']; ?></td>
 									<td><?php echo $stuData['Last_name']; ?></td>
 									<td><?php echo $stuData['Gender']; ?></td>
+									<td><?php if($data['Vote_status'] == 1)
+													echo "Yes";
+											  else if($data['Vote_status'] == 0)
+											        echo "No"; ?></td>
 								</tr>
 								<?php 
 									}
@@ -190,7 +195,7 @@
 		$(document).ready( function () {
     $('#voters_Table').DataTable({
     	'columnDefs': [{
-    		'targets':2,
+    		'targets':3,
     		'orderable':false,
     	}]
     });

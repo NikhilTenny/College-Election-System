@@ -6,8 +6,10 @@ $email = $_POST['Eid'];
 $gender = $_POST['Gender'];
 $dept = $_POST['Department'];
 $yr = $_POST['Year'];
+$Pno = $_POST['Pno'];
 $pswd = $_POST['Password'];
 $pswdre = $_POST['Passwordre'];
+echo $Pno;
 
 
 
@@ -67,8 +69,8 @@ if($_POST["subbtn"] == "SIGN UP") {
 		$yrid = getyrid($yr,$con);
 		$deptid = getdeptid($dept,$con);
 		if(($yrid != 0)and ($deptid != 0)){
-			$signupquery = "insert into users (Email,First_name,Last_name,Gender,Department_id,Year_id) values
-											  ('$email','$fname','$lname','$gender',$deptid,$yrid);"; 
+			$signupquery = "insert into users (Email,First_name,Last_name,Gender,Department_id,Year_id,Phone_no) values
+											  ('$email','$fname','$lname','$gender','$deptid','$yrid','$Pno');"; 
 			mysql_query($signupquery,$con); 								  
 			$id = getid($email,$con);
 			log_table_insert($id,$con,$pswd);
@@ -96,7 +98,6 @@ if($_POST["subbtn"] == "SIGN UP") {
 		session_start();
 		$_SESSION['data'] = $data; 
 		header("Location:/project/index.php");
-
 }
 }
 ?>

@@ -118,8 +118,10 @@
 				<h1 class = Sign-text> SIGN UP</h1>
 				<span class="error-msg" > <?php echo (isset( $_SESSION['data']['s_message']))? $_SESSION['data']['s_message']:"" ?></span>	
 				<input type="text" name="Fname" placeholder="First Name" value="<?php echo (isset($_SESSION ['data']['Fname'])) ? $_SESSION['data']['Fname'] : '' ?>"  autocomplete="off" required>
+				
 				<input type="text" name="Lname" placeholder="Last Name" value="<?php echo (isset($_SESSION['data']['Lname'])) ? $_SESSION['data']['Lname'] : '' ?>" autocomplete="off" required>
-				<input id="sign-uname" type="text" name="Eid" placeholder="Email ID" autocomplete="off" required>
+				<input type="number" name="Pno" placeholder="Phone Number" required>
+				<input id="sign-uname" type="email" name="Eid" placeholder="Email ID" autocomplete="off" required>
 							
 				<div class="Drop-area">
 					<select name="Gender" required >
