@@ -1,6 +1,7 @@
 <?php
 	include("php/config.php");
 	include("php/onTablefunc.php");
+	include('php/elecheck.php');
 	session_start();
 	if(!isset($_SESSION['ad_Uname'])) {
 		header("Location:/project/index.php");

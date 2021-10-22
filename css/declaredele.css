@@ -1,0 +1,99 @@
+
+.details_Part {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	height: 60vh;
+}
+.new_Election {
+	display: flex;
+	justify-content: center;
+	margin: 13px 0 7px 0;
+	font-size: 1.70rem;
+	font-family: sans-serif;
+	font-weight: bold;
+}
+
+.declared_ele {
+
+	padding: .5em;
+	display: flex;
+	flex-direction: column;
+	//justify-content: center;
+	width: 60%;
+
+}
+
+.declared_ele .ele_Name {
+	font-size: 2.0rem;
+	font-family: sans-serif;
+	font-weight: bold;
+	display: flex;
+	//justify-content: center;
+	margin-bottom: 40px;
+	padding-left: 40px;
+
+}
+
+.declared_ele  .election_Date,
+.declared_ele  .election_Time {
+	display: flex;
+	//justify-content: center;
+	padding-left: 40px;
+	font-size: 1.5rem;
+	font-weight: bold;
+	font-family: sans-serif;
+	margin-bottom: 15px;
+
+}
+
+.time_Left{
+	margin-top: 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: sans-serif;
+}	
+
+.time_Left .start_Text {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.time_Left .time_Count {
+	font-size: 2.6rem;
+}
+
+.candids {
+	padding: .5em;
+
+	width: 25%;
+	min-width: 150px;
+	padding-left: 20px;
+
+}
+
+.cand_Heading {
+	font-size: 2.0rem;
+	font-family: sans-serif;
+	font-weight: bold;
+	margin-bottom: 20px;
+
+
+}
+
+
+td img {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-right: 1.4em;
+	background: grey;
+	
+}
+
+.cand_Name {
+	font-size: 1.15rem;
+	font-weight: bold;
+	font-family: sans-serif;
+}

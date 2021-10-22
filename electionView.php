@@ -22,7 +22,7 @@
 	$dpt = getDepartment($eData['Department_id'],$con);
 	$yr = getYear($eData['Year_id'],$con);
 	$votersNo = get_No_of_voters($eid,$con);  
-	if(!$votersNo) 
+	if($votersNo < 0) 
 		errormsg();
 ?>
 <!DOCTYPE html>

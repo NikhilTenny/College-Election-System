@@ -5,6 +5,7 @@
 	if(!isset($_SESSION['ad_Uname'])) {
 		header("Location:/project/index.php");
 	}
+	include('php/elecheck.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -99,8 +100,8 @@
 							<option disabled selected>Department</option>
 							<option value="BCA">BCA</option>
 							<option value="MCA">MCA</option>
-							<option value="Bcom">Bcom</option>
-							<option value="Mcom">Mcom</option>
+							<option value="B.com">B.com</option>
+							<option value="M.com">M.com</option>
 						</select>	
 						<select name="year">
 							<option disabled selected>Year</option>

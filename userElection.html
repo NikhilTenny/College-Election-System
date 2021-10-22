@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/userpanel.css">
+	<link rel="stylesheet" type="text/css" href="css/declaredele.css">
+</head>
+<body>
+	<div class="main_container">
+		<div class="topbar">
+			<a><img src="images/voteicon.png"></a>
+			<div class="stu_Info">
+				<span>Nikhil Tenny</span>
+				<img src="images/stuinfo.png">
+			</div>
+		</div>
+		<div class="center_Portion">
+			<div class="menu_Items">
+				<div class="election">
+					<a href=""><button class="btn election " style="background:#778ca3; color:white;">Election</button></a>
+				</div>
+				<div class="cand_Apply">
+					<a href=""><button class="btn Apply" >Apply</button>
+				</div></a>
+				<div class="result_View">
+					<a href=""><button class="btn result">Result</button>
+				</div></a>
+			</div>
+			<div class="ele_Part">
+				<span class="new_Election"> New Election Declared </span>
+				<div class="details_Part">
+					<div class="declared_ele">
+						<span class="ele_Name">First BCA Election</span>
+						<div class="election_Date">
+							<span>Election Date:</span>
+							<span>23-2-2001</span>
+						</div>
+						<div class="election_Time">
+							<span>Election Time:</span>
+							<span>10:20:20</span>
+						</div>
+						<div class="time_Left">
+							<span class="start_Text">Election Starts in:</span>
+							<span id="count_Down" class="time_Count"></span>
+						</div>
+					</div>
+					<div class="candids">
+						<div class="cand_Heading">
+							<span>Candidates</span>
+						</div>
+						<table>
+							<tbody>
+								<tr>
+									<td class="cand_img"><img src="images/candidate.png"></td>
+									<td class="cand_Name">Harman kumar</td>
+								</tr>
+								<tr>
+									<td class="cand_img"><img src="images/candidate.png"></td>
+									<td class="cand_Name">Narmat Sigh</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		let till_Date = new Date("Oct 19 21 23:37:25").getTime();
+		let x = setInterval(function() {
+			let now = new Date().getTime();
+			let distance = till_Date - now;
+			let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			document.getElementById("count_Down").innerHTML = days + "d " + hours + "h "
+  			+ minutes + "m " + seconds + "s ";
+  			if (distance < 0) {
+    			clearInterval(x);
+    			document.getElementById("count_Down").innerHTML = "EXPIRED";
+  			}
+
+		},1000);
+	</script>
+</body>
+</html>
