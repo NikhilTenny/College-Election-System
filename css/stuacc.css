@@ -1,0 +1,94 @@
+.center_Portion {
+	display: flex;
+	justify-content: center;
+}
+
+.profile {
+	margin-top: 30px;
+	padding: 1rem;
+	background: orange;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border-radius: 5px;
+
+}
+
+.details div:not(:last-child) {
+	padding-bottom: 10px;
+}
+
+.details div {
+	display: flex;
+	//flex-direction: column;
+}
+
+.stu_Img {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 80px;
+	height:60px;
+	background-image: url('/images/user.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 80%;
+	margin-bottom: 10px;
+}
+
+input[type=text],input[type=password]{
+	width: 380px;
+	padding: 7px 10px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid grey;
+    border-bottom:2px solid grey ;
+    outline: none;
+}
+
+.drop-area {
+	display: flex;
+	justify-content: space-between;
+}
+
+select {
+	width: 32%;
+	padding: 7px 10px;
+	border-radius: 5px;
+    border: 1px solid grey;
+    border-bottom:2px solid grey ;
+    outline: none;
+    color: grey;
+    font-size: 1rem;
+
+}
+
+.options {
+	display: flex;
+	justify-content: space-between;
+	padding:0 5px 0 5px ;
+	font-family: sans-serif;	
+}
+
+a {
+	text-decoration: none;
+}
+
+input[type=submit] {
+	width: 100%;
+	font-size: 1.5rem;
+	padding: 5px 0 5px 0;
+	border-radius: 5px;
+	border: 2px solid black;
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+

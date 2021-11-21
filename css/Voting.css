@@ -38,13 +38,14 @@
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
 	width: 236px;
 	height: 244px;
 	margin: 10px;
 	background: orange;
 	transition: 200ms ease-in-out;
 	border-radius: 10px;
+	overflow: hidden;
+
 	
 }
 
@@ -53,9 +54,10 @@
 	display: flex;
 	justify-content: center;
 	width: 100%;
-	height: 35%;
+	height: 30%;
 	border-radius: 10px 10px 50% 0;
 	background: grey;
+	transition: 250ms ease-in-out;
 
 }
 
@@ -74,6 +76,7 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+
 	
 }
 
@@ -86,14 +89,66 @@
 	background-size: cover;
 }
 
-.cand_Name{
+.cand_Name{	
+	position: relative;
+	top: 30%;
 	align-self: center;
 	font-size: 1.5rem;
 	font-family: sans-serif;
 	padding-bottom: 60px;
 }
 
+.cast_Vote {
+	position: relative;
+	top: 150%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 50px;
+	height:50px;
+	background-image: url('/images/vote.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	transition: 250ms ease-in-out;
+}
+
+
 .card:hover {
 	transform: translateY(-.5rem);
 	box-shadow: 0px 10px 16px grey;
+	cursor: pointer;
+
+}
+
+ .card:hover .cast_Vote{
+	transition: 250ms ease-in-out;
+	top: 15px;
+}
+
+.card:hover .cand_Name {
+	transition: 250ms ease-in-out;
+	top: 25%;	
+}
+.card:hover .stu {
+	transition: 250ms ease-in-out;
+	font-size: 1.53rem;
+}
+
+
+.vote_Switch {
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.vote_Button {
+	width: 350px;
+	font-size: 1.5rem;
+	font-weight: bold;
+	letter-spacing: 1px;
+	padding: 8px 0 8px 0;
+	border-radius: 40px;
+	border: 2px solid black;
+	
 }

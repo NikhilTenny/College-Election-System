@@ -2,7 +2,7 @@
 include("config.php");
 $eQ = "select * from elections where Election_status = 0 or Election_status = 1";
 $eQ_ob = mysql_query($eQ,$con);
-echo date("M d, Y H:i:s");
+
 while($data = mysql_fetch_array($eQ_ob)) {
 	$eid = $data['id'];
 	if($data['End_date'] <= date('Y-m-d')) {

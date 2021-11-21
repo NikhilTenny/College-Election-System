@@ -17,10 +17,16 @@ body {
 	box-shadow: 2px 2px 13px #a4b0be;
 }
 
+.topbar div {
+	display: flex;
+	flex-direction: row;
+	align-self: center;
+}
 .topbar a img {
 	width: 45px;
 	height: 45px;
 	padding-left: 1em;
+	padding-right: 3em;
 }
 
 .topbar div {
@@ -54,29 +60,23 @@ body {
  }
 
 .menu_Items {
+	position: relative;	
 	display: flex;
 	justify-content: center;
-	flex-wrap: wrap;
-	padding-top: .9em;
 
-}
-
-.menu_Items .cand_Apply {
-	margin: 0 1.8em 0 1.8em;
 }
 
 .menu_Items .btn {
 	position: relative;
 	overflow: hidden;
-	font-size: 1.6rem;
-	font-weight: bold;
-	padding: .29em 2.3em;
+	font-size: 1.4rem;
+	font-weight: 700;
+	padding: .19em 1.3em;
 	cursor: pointer;
-	border: 2px solid #778ca3;
+	border: none;
 	background: none;
 	color:#778ca3;
 	transition: 350ms ease-in-out;
-	margin-top: 10px;
 	z-index: 1;
 
 }
@@ -104,7 +104,9 @@ body {
 	height: 250%;	
 }
 
-
+.top_Ele_Name { 
+	align-self: center; 
+	background: red; }
 
 
 

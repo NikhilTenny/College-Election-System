@@ -9,24 +9,27 @@
 <body>
 	<div class="main_container">
 		<div class="topbar">
-			<a><img src="images/voteicon.png"></a>
+			<div>
+				<a><img src="images/voteicon.png"></a>
+				<div class="menu_Items">
+					<div class="election">
+						<a href=""><button class="btn election " style="background:#778ca3; color:white;">Election</button></a>
+					</div>
+					<div class="cand_Apply">
+						<a href=""><button class="btn Apply" >Apply</button>
+					</div></a>
+					<div class="result_View">
+						<a href=""><button class="btn result">Result</button>
+					</div></a>
+				</div>
+			</div>
 			<div class="stu_Info">
 				<span>Nikhil Tenny</span>
 				<img src="images/stuinfo.png">
 			</div>
 		</div>
 		<div class="center_Portion">
-			<div class="menu_Items">
-				<div class="election">
-					<a href=""><button class="btn election " style="background:#778ca3; color:white;">Election</button></a>
-				</div>
-				<div class="cand_Apply">
-					<a href=""><button class="btn Apply" >Apply</button>
-				</div></a>
-				<div class="result_View">
-					<a href=""><button class="btn result">Result</button>
-				</div></a>
-			</div>
+			
 			<div class="ele_Part">
 				<span class="new_Election"> New Election Declared </span>
 				<div class="details_Part">
@@ -67,7 +70,7 @@
 		</div>
 	</div>
 	<script type="text/javascript">
-		let till_Date = new Date("Oct 19 21 23:37:25").getTime();
+		let till_Date = new Date("Dec 19 21 23:37:25").getTime();
 		let x = setInterval(function() {
 			let now = new Date().getTime();
 			let distance = till_Date - now;

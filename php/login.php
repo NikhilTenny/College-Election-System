@@ -23,7 +23,6 @@ function checklogin($id,$pswd,$con,$login_table) {
 		$pass = mysql_fetch_array($passQ);
 	}
 	if($pass[0] == $pswd) {
-		echo $uname."  Successfully Logged in "	;
 		return True;
 	}
 	else {
@@ -62,8 +61,8 @@ if($id != False) {
 	if(checklogin($id,$pswd,$con,$login_table) == True) {
 		if(isset($_SESSION['data'])) {
 			unset($_SESSION['data']);
-		echo $_POST['username']."  Successfully Logged in ";
 		}
+		header("location:stulogin.php?sid=$id");
 		if($main_table == 'admin') {
 			session_start();
 			$_SESSION['ad_Uname'] = $uname;
