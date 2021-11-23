@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 08, 2021 at 03:32 PM
+-- Generation Time: Nov 23, 2021 at 08:01 PM
 -- Server version: 5.6.12-log
--- PHP Version: 5.4.12
+-- PHP Version: 5.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -117,10 +117,10 @@ CREATE TABLE IF NOT EXISTS `department` (
 --
 
 INSERT INTO `department` (`id`, `Department_name`, `Yr_no`) VALUES
-(1, 'BCA', 0),
-(3, 'MCA', 0),
-(4, 'B.com', 0),
-(6, 'M.com', 0);
+(1, 'BCA', 3),
+(3, 'MCA', 2),
+(4, 'B.com', 3),
+(6, 'M.com', 2);
 
 -- --------------------------------------------------------
 
@@ -142,14 +142,20 @@ CREATE TABLE IF NOT EXISTS `elections` (
   PRIMARY KEY (`id`),
   KEY `elections_dpt` (`Department_id`),
   KEY `elections_year` (`Year_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=40 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=57 ;
 
 --
 -- Dumping data for table `elections`
 --
 
 INSERT INTO `elections` (`id`, `Name`, `Department_id`, `Year_id`, `Election_status`, `Start_date`, `End_date`, `Start_time`, `End_time`, `Voters`) VALUES
-(39, 'First BCA', 3, 2, 0, '2021-10-09', '2021-10-10', '13:00:00', '15:00:00', 2);
+(39, 'First BCA', 3, 2, 2, '2021-10-09', '2021-10-10', '13:00:00', '15:00:00', 0),
+(49, 'this is t', 1, 1, 1, '2021-10-08', '2021-10-09', '20:45:00', '23:44:00', 0),
+(50, 'again', 1, 2, 2, '2021-10-08', '2021-10-09', '19:49:00', '20:52:00', 4),
+(51, 'dfdfdfdfdf', 1, 1, 2, '2021-10-08', '2021-10-09', '20:53:00', '20:53:00', 0),
+(52, 'tera', 1, 3, 2, '2021-10-07', '2021-10-08', '20:57:00', '20:59:00', 1),
+(53, 'Third B.com Election', 4, 1, 0, '2021-11-04', '2021-11-05', '22:58:00', '22:57:00', 0),
+(56, 'First MCA Election', 3, 1, 1, '2021-11-03', '2021-11-04', '12:15:00', '12:15:00', 2);
 
 -- --------------------------------------------------------
 
@@ -183,7 +189,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`),
   KEY `users_dpt` (`Department_id`),
   KEY `users_yr` (`Year_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=80 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=81 ;
 
 --
 -- Dumping data for table `users`
@@ -199,7 +205,8 @@ INSERT INTO `users` (`id`, `Email`, `Phone_no`, `First_name`, `Last_name`, `Gend
 (75, 'shibukr@gmail.com', 7658998765, 'shibu', 'kr', 'Male', 3, 2),
 (76, 'zukarannan@gmail.com', 9207537834, 'MARK', 'ZUKERBERG', 'Male', 1, 3),
 (77, 'teslu@gmail.com', 9947277846, 'tesla ', 'tom', 'Female', 6, 2),
-(79, 'david12@gmail.com', 9876547890, 'David', 'Bekham', 'Male', 1, 2);
+(79, 'david12@gmail.com', 9876547890, 'David', 'Bekham', 'Male', 1, 2),
+(80, 'nari@gmail.com', 9372555451, 'nari', 'man', 'Male', 6, 2);
 
 -- --------------------------------------------------------
 
@@ -243,7 +250,7 @@ CREATE TABLE IF NOT EXISTS `voters_list` (
   PRIMARY KEY (`id`),
   KEY `voters_list_user_id` (`User_id`),
   KEY `voters_list_election_id` (`Election_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
 
 --
 -- Dumping data for table `voters_list`
@@ -251,7 +258,14 @@ CREATE TABLE IF NOT EXISTS `voters_list` (
 
 INSERT INTO `voters_list` (`id`, `User_id`, `Election_id`, `Vote_status`) VALUES
 (2, 72, 39, 0),
-(3, 75, 39, 0);
+(3, 75, 39, 0),
+(18, 69, 50, 0),
+(19, 71, 50, 0),
+(20, 73, 50, 0),
+(21, 79, 50, 0),
+(22, 76, 52, 0),
+(27, 68, 56, 0),
+(28, 74, 56, 0);
 
 -- --------------------------------------------------------
 
