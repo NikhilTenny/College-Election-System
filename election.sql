@@ -4,7 +4,11 @@
 --
 -- Host: localhost
 <<<<<<< HEAD
+<<<<<<< HEAD
 -- Generation Time: Dec 01, 2021 at 08:06 AM
+=======
+-- Generation Time: Nov 23, 2021 at 08:01 PM
+>>>>>>> 617935b952c5c299cedeed419b43995463b3ae6e
 =======
 -- Generation Time: Nov 23, 2021 at 08:01 PM
 >>>>>>> 617935b952c5c299cedeed419b43995463b3ae6e
@@ -147,8 +151,11 @@ CREATE TABLE IF NOT EXISTS `elections` (
   KEY `elections_dpt` (`Department_id`),
   KEY `elections_year` (`Year_id`)
 <<<<<<< HEAD
+<<<<<<< HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 =======
+=======
+>>>>>>> 617935b952c5c299cedeed419b43995463b3ae6e
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=57 ;
 
 --
@@ -163,6 +170,9 @@ INSERT INTO `elections` (`id`, `Name`, `Department_id`, `Year_id`, `Election_sta
 (52, 'tera', 1, 3, 2, '2021-10-07', '2021-10-08', '20:57:00', '20:59:00', 1),
 (53, 'Third B.com Election', 4, 1, 0, '2021-11-04', '2021-11-05', '22:58:00', '22:57:00', 0),
 (56, 'First MCA Election', 3, 1, 1, '2021-11-03', '2021-11-04', '12:15:00', '12:15:00', 2);
+<<<<<<< HEAD
+>>>>>>> 617935b952c5c299cedeed419b43995463b3ae6e
+=======
 >>>>>>> 617935b952c5c299cedeed419b43995463b3ae6e
 
 -- --------------------------------------------------------
@@ -198,7 +208,11 @@ CREATE TABLE IF NOT EXISTS `users` (
   KEY `users_dpt` (`Department_id`),
   KEY `users_yr` (`Year_id`)
 <<<<<<< HEAD
+<<<<<<< HEAD
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=103 ;
+=======
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=81 ;
+>>>>>>> 617935b952c5c299cedeed419b43995463b3ae6e
 =======
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=81 ;
 >>>>>>> 617935b952c5c299cedeed419b43995463b3ae6e
@@ -240,6 +254,9 @@ INSERT INTO `users` (`id`, `Email`, `Phone_no`, `First_name`, `Last_name`, `Gend
 (77, 'teslu@gmail.com', 9947277846, 'tesla ', 'tom', 'Female', 6, 2),
 (79, 'david12@gmail.com', 9876547890, 'David', 'Bekham', 'Male', 1, 2),
 (80, 'nari@gmail.com', 9372555451, 'nari', 'man', 'Male', 6, 2);
+<<<<<<< HEAD
+>>>>>>> 617935b952c5c299cedeed419b43995463b3ae6e
+=======
 >>>>>>> 617935b952c5c299cedeed419b43995463b3ae6e
 
 -- --------------------------------------------------------
@@ -296,8 +313,11 @@ CREATE TABLE IF NOT EXISTS `voters_list` (
   KEY `voters_list_user_id` (`User_id`),
   KEY `voters_list_election_id` (`Election_id`)
 <<<<<<< HEAD
+<<<<<<< HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 =======
+=======
+>>>>>>> 617935b952c5c299cedeed419b43995463b3ae6e
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
 
 --
@@ -314,6 +334,9 @@ INSERT INTO `voters_list` (`id`, `User_id`, `Election_id`, `Vote_status`) VALUES
 (22, 76, 52, 0),
 (27, 68, 56, 0),
 (28, 74, 56, 0);
+<<<<<<< HEAD
+>>>>>>> 617935b952c5c299cedeed419b43995463b3ae6e
+=======
 >>>>>>> 617935b952c5c299cedeed419b43995463b3ae6e
 
 -- --------------------------------------------------------
