@@ -1,6 +1,8 @@
 body {
 	margin: 0;
 	padding: 0;
+	font-family: -webkit-pictograph;
+
 }
 
 .topbar {
@@ -26,12 +28,13 @@ body {
 	width: 45px;
 	height: 45px;
 	padding-left: 1em;
-	padding-right: 3em;
+	padding-right: 1em;
 }
 
 .topbar div {
 	cursor: pointer;
 	padding-right: 1em;
+
 }
 
 .stu_Info img {
@@ -43,14 +46,30 @@ body {
 .topbar .stu_Info {
 	display: flex;
 	align-items: center;
+}
+
+.stu_Info .acc {
+	display: flex;
+	align-items: center;
+}
+.topbar a {
+	text-decoration: none;
 
 }
 .topbar .stu_Info span {
-	padding-right: .5em;
-	font-family: sans-serif;
+	
+	text-decoration: none;
+	padding-right: -1.5em;
+	font-size: 1.3rem;
+	font-family: -webkit-pictograph;
 	font-weight: bold ;
 	color: #536162;
 
+
+}
+
+.stu_Info i {
+	font-size: 1.4rem;
 }
 
  .center_Portion{
@@ -62,16 +81,31 @@ body {
 .menu_Items {
 	position: relative;	
 	display: flex;
+	margin-left: 20px;
 	justify-content: center;
+
 
 }
 
+.error {
+	display: flex;
+	font-family: -webkit-pictograph;
+	justify-content: center;
+	font-size: 1.1rem;
+	padding-bottom: .3em;
+	font-weight: bold;
+	color: white;
+}
+
+
 .menu_Items .btn {
 	position: relative;
+	font-family: -webkit-pictograph;
 	overflow: hidden;
-	font-size: 1.4rem;
+	font-size: 1.3rem;
 	font-weight: 700;
 	padding: .19em 1.3em;
+	padding-bottom: .40em;
 	cursor: pointer;
 	border: none;
 	background: none;
@@ -108,5 +142,8 @@ body {
 	align-self: center; 
 	background: red; }
 
+.simple_text {
+	font-size: 2rem;
+}
 
 

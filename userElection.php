@@ -1,3 +1,20 @@
+<?php 
+include("php/config.php");
+include("php/onTablefunc.php");
+$id = $_GET['uid'];
+$yrid = $_GET['yrid'];
+$dpid = $_GET['dpid'];
+$Q = "Select * from elections where Department_id = $dpid and Year_id = $yrid";
+$Qre = mysql_query($Q,$con);
+$data = mysql_fetch_array($Qre);
+$eid = $data['id'];
+$uQ = "select * from users where id = $id";
+$uQ = mysql_query($uQ,$con);
+$udata = mysql_fetch_array($uQ);
+$stuname = $udata['First_name']." ".$udata['Last_name'];
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,6 +22,8 @@
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="css/userpanel.css">
 	<link rel="stylesheet" type="text/css" href="css/declaredele.css">
+	<link rel="stylesheet" type="text/css" href="css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="css/fontawesome.min.css">
 </head>
 <body>
 	<div class="main_container">
@@ -16,17 +35,21 @@
 						<a href=""><button class="btn election " style="background:#778ca3; color:white;">Election</button></a>
 					</div>
 					<div class="cand_Apply">
-						<a href=""><button class="btn Apply" >Apply</button>
-					</div></a>
+						<a href="stuapply.php"><button class="btn Apply" >Apply</button></a>
+					</div>
 					<div class="result_View">
-						<a href=""><button class="btn result">Result</button>
-					</div></a>
+						<a href=""><button class="btn result">Result</button></a>
 				</div>
+					</div>
 			</div>
 			<div class="stu_Info">
-				<span>Nikhil Tenny</span>
-				<img src="images/stuinfo.png">
-			</div>
+						<a class ="acc" href="stuacc
+				.php">
+						<span><?php echo $stuname; ?></span>
+						<img src="images/stuinfo.png">
+						</a>
+						<a href="php/logout.php"><i class="fas fa-sign-out-alt"></i></a>
+					</div>
 		</div>
 		<div class="center_Portion">
 			
@@ -34,19 +57,19 @@
 				<span class="new_Election"> New Election Declared </span>
 				<div class="details_Part">
 					<div class="declared_ele">
-						<span class="ele_Name">First BCA Election</span>
+						<span class="ele_Name"><?php echo $data['Name']." Election"; ?></span>
 						<div class="election_Date">
 							<span>Election Date:</span>
-							<span>23-2-2001</span>
+							<span><?php echo $data['Start_date']; ?></span>
 						</div>
 						<div class="election_Time">
 							<span>Election Time:</span>
-							<span>10:20:20</span>
+							<span><?php echo $data['Start_time']; ?></span>
 						</div>
-						<div class="time_Left">
+						<!-- <div class="time_Left">
 							<span class="start_Text">Election Starts in:</span>
 							<span id="count_Down" class="time_Count"></span>
-						</div>
+						</div> -->
 					</div>
 					<div class="candids">
 						<div class="cand_Heading">
@@ -54,14 +77,21 @@
 						</div>
 						<table>
 							<tbody>
+								<?php
+								$Q= "Select * from candidate where Elections_id = $eid;";
+								$Qob = mysql_query($Q,$con);
+								if(!$Qob)
+									die(mysql_error());
+								
+								while($data = mysql_fetch_array($Qob)) {
+									$stud = getStuData($data['User_id'],$con);
+									$name = $stud['First_name']." ".$stud["Last_name"]; 
+								?>
 								<tr>
 									<td class="cand_img"><img src="images/candidate.png"></td>
-									<td class="cand_Name">Harman kumar</td>
+									<td class="cand_Name"><?php echo $name; ?></td>
 								</tr>
-								<tr>
-									<td class="cand_img"><img src="images/candidate.png"></td>
-									<td class="cand_Name">Narmat Sigh</td>
-								</tr>
+							<?php } ?>
 							</tbody>
 						</table>
 					</div>
@@ -69,10 +99,12 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript">
-		let till_Date = new Date("Dec 19 21 23:37:25").getTime();
+
+<!-- 	<script type="text/javascript">
+		let till_Date = new Date("12 19 21 23:37:25").getTime();
 		let x = setInterval(function() {
 			let now = new Date().getTime();
+			console.log(now);
 			let distance = till_Date - now;
 			let days = Math.floor(distance / (1000 * 60 * 60 * 24));
 			let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -86,6 +118,6 @@
   			}
 
 		},1000);
-	</script>
+	</script> -->
 </body>
 </html>

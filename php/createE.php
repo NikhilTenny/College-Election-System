@@ -73,8 +73,15 @@ function setVotersList($voters,$eid,$con) {
 $dpid = getdeptid($deptname,$con);
 $yrid = getyearid($yearname,$con);
 
+//check if an election is already declared in the class
+$eq = "select * from elections where Department_id = $dpid and Year_id = $yrid and Election_status < 2";
+$eqobj = mysql_query($eq,$con);
+echo mysql_num_rows($eqobj); 
+if(mysql_num_rows($eqobj) > 0)
+	header("Location:/project/createElection.php?cr_Reply=Election ongoing in selected batch");
+
 // If the starting date is same as or before the ending date
-if($sdate <= $edate) {
+else if($sdate <= $edate) {
 	$inQ = "insert into elections (Name,Department_id,Year_id,Election_status,Start_date,Start_time,End_date,End_time) values 
 								  ('$ename','$dpid','$yrid',0,'$sdate','$stime','$edate','$etime');";
 	if(!mysql_query($inQ,$con)) {

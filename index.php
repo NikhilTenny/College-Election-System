@@ -68,7 +68,7 @@
 	<div class="Log-Center" id="admin_login_form" style = "display: none;" >
 		<img id="login-img" src="images/admin.png">
 		<div class="Login-text">LOG IN</div>
-		<span id="ad_error_msg" class="error-msg"  >
+		<span id="ad_error_msg" class="error-msg"  > 
 			<?php 
 			if(isset($_SESSION['data']['window'])) {
 				if($_SESSION['data']['window'] == 'admin') {
@@ -91,7 +91,7 @@
 	<div class="Log-Center" id="student_login_form" style = "display: none";>
 		<img id="login-img" src="images/student.png">
 		<div class="Login-text">LOG IN</div>
-		<span id="stu_error_msg" class="error-msg">
+		<span id="stu_error_msg" class="error-msg" style="color: orange;">
 			<?php 
 			if(isset($_SESSION['data']['window'])) {
 				if($_SESSION['data']['window'] == 'users') {
@@ -107,7 +107,7 @@
 		</div>
 		<input type="submit" name="stulogin" value="LOGIN">
 	</form>		
-		<p class="last_text">Not Registered? <button type="button" class="in_redirect" onclick="print_sign_up()">Register</button></p>
+		<p class="last_text">Not Registered? <button type="button" class="in_redirect" onclick="print_sign_up()" style="color: white;">Register</button></p>
 	</div>
 	
 	<!------ Sign Up form ------>	
@@ -158,7 +158,7 @@
 				<input type="submit" name="subbtn" value="SIGN UP">		
 
 				<p class="last_text"> Already registered? 
-					<button type="button" class="in_redirect" onclick="print_stu_log()">Login</button></p>
+					<button type="button" class="in_redirect" onclick="print_stu_log()" style="color: white;">Login</button></p>
 			</div>						
 		</div>
 		<script type="text/javascript" src="js/index_validation.js"></script>

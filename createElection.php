@@ -96,14 +96,14 @@
 						<input type="text" name="election_Name" placeholder="">
 					</div>
 					<div class="dropDown">
-						<select name="Department">
+						<select name="Department" required>
 							<option disabled selected>Department</option>
 							<option value="BCA">BCA</option>
 							<option value="MCA">MCA</option>
 							<option value="B.com">B.com</option>
 							<option value="M.com">M.com</option>
 						</select>	
-						<select name="year">
+						<select name="year" required>
 							<option disabled selected>Year</option>
 							<option value="First">First</option>
 							<option value="Second">Second</option>
@@ -113,21 +113,21 @@
 					<div class="datetime start">
 						<div class="start date ">
 							<label>Start Date:</label>
-							<input type="date" name="start_Date">
+							<input type="date" name="start_Date" required>
 						</div>
 						<div class="start time ">
 							<label>Start Time:</label>
-							<input type="time" name="start_Time">
+							<input type="time" name="start_Time" required>
 						</div>
 					</div>
 					<div class="datetime end">
 						<div class="end date">
 							<label>End Date:</label>
-							<input type="date" name="end_Date">
+							<input type="date" name="end_Date" required>
 						</div>
 						<div class="end time">
 							<label>End Time:</label>
-							<input type="time" name="end_Time">
+							<input type="time" name="end_Time" required>
 						</div>
 					</div>
 					<input type="submit" name="btn" value="Create">

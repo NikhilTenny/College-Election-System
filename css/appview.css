@@ -99,10 +99,12 @@ textarea {
 .c_btn.decline {
 	background: #FF2511;  
 	border-radius: 5px;
+	cursor: pointer;
 }
 .c_btn.accept {
 	background: #18A558;
 	border-radius: 5px;
+	cursor: pointer;
 }
 .c_btn.decline:hover {
 	background:  #ff3f34;

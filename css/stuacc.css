@@ -20,7 +20,8 @@
 
 .details div {
 	display: flex;
-	//flex-direction: column;
+
+	..justify-content: center;
 }
 
 .stu_Img {
@@ -29,7 +30,7 @@
 	transform: translateX(-50%);
 	width: 80px;
 	height:60px;
-	background-image: url('/images/user.png');
+	background-image: url('/project/images/user.png');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 80%;
@@ -52,8 +53,9 @@ input[type=text],input[type=password]{
 }
 
 select {
-	width: 32%;
-	padding: 7px 10px;
+	margin: 0 1px;
+	width: 56%;
+	padding: 7px 7px;
 	border-radius: 5px;
     border: 1px solid grey;
     border-bottom:2px solid grey ;

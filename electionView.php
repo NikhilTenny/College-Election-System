@@ -145,7 +145,7 @@
 							</div>
 							<div class="end_time">
 								<label>End Time:</label>
-								<span><?php echo $eData['End_time']; ?></span>
+								<span><?php echo $eData['End_time']; ?></span> 
 							</div>
 						</div>
 						<div class="cancel">

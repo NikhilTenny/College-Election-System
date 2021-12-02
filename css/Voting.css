@@ -9,17 +9,17 @@
 	font-family: sans-serif;
 }
 
-.cands_Area {
+/*.cands_Area {
 	display: flex;
 	justify-content: space-around;
 	flex-direction: row;
 	flex-wrap: wrap;
 
-}
+}*/
 
 .cands_Area .boys,.cands_Area .girls {
-	width: 49%;
-	min-width: 350px;
+	min-width: 49%;
+	
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
@@ -27,7 +27,7 @@
 } 
 
 .cands_Area .boys{
-	background: lightblue;
+	background: blue;
 }
 
 .cands_Area .girls { 
@@ -46,7 +46,6 @@
 	border-radius: 10px;
 	overflow: hidden;
 
-	
 }
 
 .card .card_Top {
@@ -70,12 +69,15 @@
 }
 
 .boys .cand_Img {
+
 	width: 80px;
 	height:80px;
-	background-image: url('/images/mCand.png');
+	background-image: url('../images/mCand.png');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+
+
 
 	
 }
@@ -83,7 +85,7 @@
 .girls .cand_Img {
 	width: 80px;
 	height:80px;	
-	background-image: url('/images/fCand.png');
+	background-image: url('../images/fCand.png');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -105,7 +107,7 @@
 	transform: translateX(-50%);
 	width: 50px;
 	height:50px;
-	background-image: url('/images/vote.png');
+	background-image: url('../images/vote.png');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -140,6 +142,7 @@
 	justify-content: center;
 	margin-top: 10px;
 	margin-bottom: 20px;
+	width: 100%;
 }
 
 .vote_Button {
@@ -152,3 +155,85 @@
 	border: 2px solid black;
 	
 }
+/*------------------------------------------------------------------------------------------------------*/
+
+.Candidate_Heading {
+	display: flex;
+	justify-content: center;
+}
+
+.Candidate_Heading span {
+	font-family: -webkit-pictograph;
+    font-size: 2.1rem;
+    font-weight: 700;
+    
+    padding-bottom: 20px;
+}
+
+
+.cand_list {
+	display: flex;
+	justify-content: center;
+}
+
+.tables {
+	display: flex;
+	justify-content: space-around;
+	padding: 10px;
+
+}
+
+.table {
+	
+	background: red;
+	padding: 20px 25px;
+	border-radius: 10px;
+}
+
+#realtable {
+	border-collapse: collapse;
+
+}
+
+
+input[type = radio] {
+	cursor: pointer;
+    -webkit-transform: scale(3);
+    
+}
+#realtable tbody td:last-child {
+	padding-left: 15px;
+}
+
+
+.female_img {
+	width: 80px;
+	height:80px;	
+	background-image: url('../images/fCand.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;	
+
+
+}
+
+.male_img {
+	width: 80px;
+	height:80px;	
+	background-image: url('../images/mCand.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;	
+
+
+}
+
+
+.cand_name {
+	padding: 10px 10px 10px 10px;
+	font-family: -webkit-pictograph;
+    font-size: 2.1rem;
+    font-weight: 700;
+
+}
+

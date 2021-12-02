@@ -62,7 +62,10 @@ if($id != False) {
 		if(isset($_SESSION['data'])) {
 			unset($_SESSION['data']);
 		}
-		header("location:stulogin.php?sid=$id");
+		session_start();
+		$_SESSION['stu_Uname'] = $uname;
+		$_SESSION['stu_Id'] = $id;
+		header("Location:stulogin.php");
 		if($main_table == 'admin') {
 			session_start();
 			$_SESSION['ad_Uname'] = $uname;

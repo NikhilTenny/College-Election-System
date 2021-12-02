@@ -14,8 +14,11 @@
 	// Delete an election
 	if(isset($_GET['election_Id'])) {
 		$eid = $_GET['election_Id'];
-		if(mysql_query("delete from elections where id = '$eid';",$con))
+		echo $eid;
+		if(mysql_query("delete from elections where id = $eid;",$con)) {
+			echo "dfdfdf";
 			header("Location:/project/elections.php");
+		}
 
 	}
 
@@ -46,7 +49,7 @@
 
 		}
 	}
-	// Return details of the student with the specified id
+	// Return details of the student of the specified id
 	function getStuData($sid,$con) {
 		$stu_ob = mysql_query("select * from users where id = '$sid';",$con);
 		if($stu_ob)
@@ -54,4 +57,55 @@
 		else 
 			return false;
 	}
+	// Return the election name of specified election id
+	function getEleName($eid,$con) {
+		$ele_ob = mysql_query("select * from elections where id = '$eid';",$con);
+		if($ele_ob){
+			$ele = mysql_fetch_array($ele_ob);
+			return $ele['Name'];
+		}
+		else 
+			return false;
+	}
+
+	// Return the election Status of specified election id
+	function getE_State($eid,$con) {
+		$ele_ob = mysql_query("select * from elections where id = '$eid';",$con);
+		if($ele_ob){
+			$ele = mysql_fetch_array($ele_ob);
+			return $ele['Election_status'];
+		}
+		else 
+			return false;
+	}	
+	// Return Applicant data
+	function getAppData($appid,$con) {
+		$Q = "select * from applicant where id = $appid";
+		$Qob = mysql_query($Q,$con);
+		if($Qob){
+			$Qre = mysql_fetch_array($Qob);
+			return $Qre;
+		}
+		else 
+		return false;	
+	}
+
+	function getdeptid($uid,$con) {
+		$getQ = mysql_query("select Department_id from users where id = $uid;",$con);
+		$id = mysql_fetch_array($getQ)[0];
+		return $id;
+	}
+	function getyrid($uid,$con) {
+		$getQ = mysql_query("select Year_id from users where id = $uid;",$con);
+		$id = mysql_fetch_array($getQ)[0];
+		return $id;
+	}
+
+	function getVoteStatus($id,$con){
+		$getQ = mysql_query("select Vote_Status from voters_list where User_id = $id;",$con);
+		$status = mysql_fetch_array($getQ)[0];
+		return $status;
+	}
+
+	
 ?>

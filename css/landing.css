@@ -73,7 +73,12 @@ nav {
 	width: 27.9vw;
 	height: 33vw;
 	right: 5%;
-	box-shadow: 0px 10px 39px #353b48;	
+	
+	/*box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+    0 100px 80px rgba(0, 0, 0, 0.07);*/
+    box-shadow: 0px 10px 39px #353b48;	
 }
 
 
@@ -85,6 +90,7 @@ nav {
 	position: absolute;
 	left: 50%;
 	background: #28B463;
+	background: linear-gradient(#0575E6,#65C7F7,#0052D4);
 	transform: translateX(-50%);
 	display: flex;
 	flex-direction: column;
@@ -94,7 +100,8 @@ nav {
 	padding-top: 25px;
 	padding-bottom: 25px;
 	justify-content: space-around;
-	box-shadow: 7px 10px 20px 8px   black;
+	box-shadow: 2px 2px 20px  grey;
+	border-radius: 10px;
 }
 
 .Sign-text {
@@ -163,6 +170,9 @@ select:hover,select:focus {
 	color: red;
 	font-size: 20px;
 }
+
+
+
 /* -------------------------------------------------------------------------------------- */
 
 

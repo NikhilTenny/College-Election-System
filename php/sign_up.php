@@ -16,7 +16,7 @@ echo $Pno;
 // Check if the an account is already in the database
 function user_exist_check($email,$con) {
 	$emailQ = "select Email from users where (Email = '$email');";
-	$email = mysql_query($emailQ);
+	$email = mysql_query($emailQ,$con);
 	if(mysql_num_rows($email) > 0) {
 		return True;
 	}

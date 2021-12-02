@@ -1,5 +1,6 @@
 <?php
 include("php/config.php");
+include("php/onTablefunc.php");
 session_start();
 	if(!isset($_SESSION['ad_Uname'])) {
 		header("Location:/project/index.php");
@@ -98,8 +99,33 @@ session_start();
 							</tr>
 						</thead>
 						<tbody>
+							<?php 
+						$selectQ = "select * from applicant;";
+						$result = mysql_query($selectQ,$con);
+						while($data = mysql_fetch_array($result)){	
+							$eid = $data['Election_id'];
+							$e_status = getE_State($eid,$con);
+							if($e_status != 0)
+								continue;
+							else{
+								$uid = $data['User_id'];
+								$studata = getStuData($uid,$con);
+								$name = $studata['First_name']." ".$studata['Last_name'];
+								$dept = getDepartment($studata['Department_id'],$con);
+								$yr = getyear($studata['Year_id'],$con);
+								$eleName = getEleName($eid,$con);
+								$appid = $data['id'];
 							
+							?>
+						<tr>
+							<td><?php echo $eleName; ?> </td>
+							<td><?php echo $name; ?> </td>
+							<td><?php echo $dept; ?> </td>
+							<td><?php echo $yr; ?> </td>
+							<td><a href="applicantView.php?uid=<?php echo $uid; ?>&appid=<?php echo $appid; ?>"  class="button View">View</a></td>
+						</tr>	
 						</tbody>
+					<?php }} ?>
 					</table>
 				</div>
 				<script type="text/javascript">
