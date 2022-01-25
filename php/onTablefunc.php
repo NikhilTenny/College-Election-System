@@ -23,7 +23,7 @@
 	}
 
 	// Return Department name 
-	function getDepartment($dpid,$con){
+	function getDepartment($dpid,$con) {
 		$dpquery = "select Department_name from department where(id = $dpid );";
 		$dp = mysql_query($dpquery,$con);
 		$department = mysql_fetch_array($dp);
@@ -101,11 +101,24 @@
 		return $id;
 	}
 
-	function getVoteStatus($id,$con){
-		$getQ = mysql_query("select Vote_Status from voters_list where User_id = $id;",$con);
+	function getVoteStatus($id,$eid,$con){
+		$getQ = mysql_query("select Vote_Status from voters_list where User_id = $id and Election_id = $eid",$con);
 		$status = mysql_fetch_array($getQ)[0];
 		return $status;
 	}
 
+	function getFullName($uid,$con) {
+	$Qre = mysql_query("select * from users where id = $uid",$con);
+	$data = mysql_fetch_array($Qre);
+	$stuname = $data['First_name']." ".$data['Last_name'];
+	return $stuname;
+	} 
+
+	function getele_Id($dpid,$yrid,$con) {
+		$getQ = "select * from elections where Department_id = $dpid and Year_id = $yrid";
+		$getQob = mysql_query($getQ,$con);
+		$data = mysql_fetch_array($getQob);
+		return $data['id'];
+	}
 	
 ?>

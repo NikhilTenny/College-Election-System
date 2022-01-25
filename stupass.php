@@ -26,7 +26,20 @@ while($data = mysql_fetch_array($Qre))
 <body>
 	<div class="main_container">
 		<div class="topbar">
-			<a href="php/stulogin.php"><img src="images/voteicon.png"></a>
+			<div>
+				<a href="php/stulogin.php"><img src="images/voteicon.png"></a>
+				<div class="menu_Items">
+					<div class="election">
+						<a href=""><button class="btn election " style="background:#778ca3; color:white;">Election</button></a>
+					</div>
+					<div class="cand_Apply">
+						<a href="stuapply.php"><button class="btn Apply" >Apply</button></a>
+					</div>
+					<div class="result_View">
+						<a href="php/resultcheck.php"><button class="btn result">Result</button></a>
+					</div>
+				</div>
+			</div>
 			<div class="stu_Info">
 						<a class ="acc" href="stuacc
 				.php">

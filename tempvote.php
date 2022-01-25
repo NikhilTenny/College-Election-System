@@ -4,7 +4,6 @@ include("php/onTablefunc.php");
 session_start();
 if(!isset($_SESSION['stu_Id'])) {
 	header("Location:/project/index.php");
-	exit();
 }
 $id = $_SESSION['stu_Id'];
 

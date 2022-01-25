@@ -15,7 +15,7 @@ $Qre = mysql_query("select * from users where id = $id",$con);
 while($data = mysql_fetch_array($Qre)) {
 	$stuname = $data['First_name']." ".$data['Last_name'];
 }
-$getQ = "select * from candidate;";
+$getQ = "select * from candidate where Elections_id = $eid;";
 $getob = mysql_query($getQ,$con);
 
 
@@ -84,7 +84,7 @@ $getob = mysql_query($getQ,$con);
 								<form action="php/vote.php" method="GET">
 								<tbody>	
 								<?php 
-				$getQ = "select * from candidate;";
+				$getQ = "select * from candidate where Elections_id = $eid;";
 				$getob = mysql_query($getQ,$con);
 				while($data = mysql_fetch_array($getob)) {
 					$cand_uid = $data['User_id'];
@@ -123,7 +123,7 @@ $getob = mysql_query($getQ,$con);
 						<div class="table">
 							<table id="realtable">
 								<?php 
-				$getQ = "select * from candidate;";
+				$getQ = "select * from candidate where Elections_id = $eid;";
 				$getob = mysql_query($getQ,$con);
 				while($data = mysql_fetch_array($getob)) {
 					$cand_uid = $data['User_id'];

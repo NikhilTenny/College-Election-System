@@ -1,16 +1,17 @@
 <?php 
 include("php/config.php");
+
 session_start();
 if(!isset($_SESSION['stu_Id'])) {
 	header("Location:/project/index.php");
-	exit();
+
 }
 $id = $_SESSION['stu_Id'];
 
 //Retrive the name of the student who is logged in 	
 $Qre = mysql_query("select * from users where id = $id",$con);
-while($data = mysql_fetch_array($Qre))
-	$stuname = $data['First_name']." ".$data['Last_name'];
+$data = mysql_fetch_array($Qre);
+$stuname = $data['First_name']." ".$data['Last_name'];
 
 ?>
 <!DOCTYPE html>
@@ -36,7 +37,7 @@ while($data = mysql_fetch_array($Qre))
 						<a href=""><button class="btn Apply" >Apply</button>
 					</div></a>
 					<div class="result_View">
-						<a href=""><button class="btn result">Result</button>
+						<a href="resultView.php"><button class="btn result">Result</button>
 					</div></a>
 				</div>
 			</div>	
@@ -49,8 +50,8 @@ while($data = mysql_fetch_array($Qre))
 						<a href="php/logout.php"><i class="fas fa-sign-out-alt"></i></a>
 					</div>
 		</div>
-		<div class="center_Portion">
-			<span class="simple_text"> NO ELECTIONS</span>
+		<div class="center_Portion" style="padding-top: 40px;">
+			<div class="msg"> <span class="simple_text"> NO ELECTIONS</span></div>
 		</div>
 	</div>
 </body>

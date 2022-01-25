@@ -5,17 +5,19 @@
 
 .profile {
 	margin-top: 30px;
-	padding: 1rem;
-	background: orange;
+	padding: 1.9rem 1.6rem;
+	background-color: #bdd4e7;
+background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	border-radius: 5px;
+	border-radius: 13px;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 
 }
 
 .details div:not(:last-child) {
-	padding-bottom: 10px;
+	padding-bottom: 20px;
 }
 
 .details div {
@@ -40,11 +42,15 @@
 input[type=text],input[type=password]{
 	width: 380px;
 	padding: 7px 10px;
-    font-size: 1rem;
+    font-size: 1.2rem;
     border-radius: 6px;
     border: 1px solid grey;
     border-bottom:2px solid grey ;
     outline: none;
+    color: black;
+}
+::placeholder {
+	color: black;
 }
 
 .drop-area {
@@ -60,8 +66,8 @@ select {
     border: 1px solid grey;
     border-bottom:2px solid grey ;
     outline: none;
-    color: grey;
-    font-size: 1rem;
+    color: black;
+    font-size: 1.2rem;
 
 }
 
@@ -69,11 +75,18 @@ select {
 	display: flex;
 	justify-content: space-between;
 	padding:0 5px 0 5px ;
-	font-family: sans-serif;	
+	font-family: sans-serif;
+	font-size: 1.2rem;
+
 }
 
 a {
 	text-decoration: none;
+	
+}
+
+a:hover {
+	color: red;
 }
 
 input[type=submit] {

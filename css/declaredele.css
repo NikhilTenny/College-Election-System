@@ -4,14 +4,16 @@
 	justify-content: space-around;
 	flex-wrap: wrap;
 	height: 60vh;
+	font-family: -webkit-pictograph;
 }
 .new_Election {
 	display: flex;
 	justify-content: center;
 	margin: 13px 0 7px 0;
 	font-size: 1.70rem;
-	font-family: sans-serif;
+
 	font-weight: bold;
+	font-family: -webkit-pictograph;
 }
 
 .declared_ele {
@@ -19,8 +21,9 @@
 	padding: .5em;
 	display: flex;
 	flex-direction: column;
-	//justify-content: center;
+	//justify-content: center;	
 	width: 60%;
+	font-family: -webkit-pictograph;
 
 }
 
@@ -32,7 +35,7 @@
 	//justify-content: center;
 	margin-bottom: 40px;
 	padding-left: 40px;
-
+	font-family: -webkit-pictograph;
 }
 
 .declared_ele  .election_Date,
@@ -42,9 +45,8 @@
 	padding-left: 40px;
 	font-size: 1.5rem;
 	font-weight: bold;
-	font-family: sans-serif;
 	margin-bottom: 15px;
-
+	font-family: -webkit-pictograph;
 }
 
 .time_Left{
@@ -52,7 +54,10 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	font-family: sans-serif;
+	background: orange;
+	width: 50%;
+	padding: 20px;
+	font-family: -webkit-pictograph;
 }	
 
 .time_Left .start_Text {
@@ -78,7 +83,7 @@
 	font-family: sans-serif;
 	font-weight: bold;
 	margin-bottom: 20px;
-
+	font-family: -webkit-pictograph;
 
 }
 
@@ -95,5 +100,6 @@ td img {
 .cand_Name {
 	font-size: 1.15rem;
 	font-weight: bold;
-	font-family: sans-serif;
+	font-family: -webkit-pictograph;
+
 }

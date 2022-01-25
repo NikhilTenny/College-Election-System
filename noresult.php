@@ -1,9 +1,10 @@
-<!-- <?php 
+<?php 
 include("php/config.php");
+
 session_start();
 if(!isset($_SESSION['stu_Id'])) {
 	header("Location:/project/index.php");
-	exit();
+
 }
 $id = $_SESSION['stu_Id'];
 
@@ -12,7 +13,7 @@ $Qre = mysql_query("select * from users where id = $id",$con);
 while($data = mysql_fetch_array($Qre))
 	$stuname = $data['First_name']." ".$data['Last_name'];
 
-?> -->
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +23,6 @@ while($data = mysql_fetch_array($Qre))
 	<link rel="stylesheet" type="text/css" href="css/declaredele.css">
 	<link rel="stylesheet" type="text/css" href="css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="css/fontawesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/result.css">
 </head>
 <body>
 	<div class="main_container">
@@ -37,7 +37,7 @@ while($data = mysql_fetch_array($Qre))
 						<a href=""><button class="btn Apply" >Apply</button>
 					</div></a>
 					<div class="result_View">
-						<a href=""><button class="btn result">Result</button>
+						<a href=""><button class="btn result" style="background:#778ca3; color:white;">Result</button>
 					</div></a>
 				</div>
 			</div>	
@@ -50,41 +50,8 @@ while($data = mysql_fetch_array($Qre))
 						<a href="php/logout.php"><i class="fas fa-sign-out-alt"></i></a>
 					</div>
 		</div>
-		<div class="center_Portion">
-				<div class="e_name"><span > WINNERS!</span> </div>
-				<div class="winners">
-					<div class="card">
-					    <img src="images/mCand.png" alt="User image" class="card__image" />
-					    <div class="card__text">
-					      <h2>Alexandra Caulea</h2>
-
-					    </div>
-					    <ul class="card__info">
-					      <li>
-					        <span class="card__info__stats">172</span>
-					        <span>VOTES</span>
-					      </li>
-					      <li>
-					        <span class="card__info__stats">47</span>
-					        <span>LEAD</span>
-					      </li>
-					    </ul>   
-	  				</div>
-  				</div>
-  				<div class="result_table">
-  					<span class="t_heading"> All Candidates</span>
-  					<table class="cands_table">
-  						<tbody>
-  							<tr>
-  								<td></td>
-  								<td></td>
-  								<td></td>
-  							</tr>
-  						</tbody>
-  					</table>
-  				</div>
-
-			</div>
+		<div class="center_Portion" style="padding-top: 40px;">
+			<div class="msg"> <span class="simple_text"> NO RESULTS</span></div>
 		</div>
 	</div>
 </body>

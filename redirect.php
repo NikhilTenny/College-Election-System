@@ -9,8 +9,11 @@ $id = $_SESSION['stu_Id'];
 
 //Retrive the name of the student who is logged in 	
 $Qre = mysql_query("select * from users where id = $id",$con);
-while($data = mysql_fetch_array($Qre))
-	$stuname = $data['First_name']." ".$data['Last_name'];
+if(!$Qre)
+die(mysql_error());
+
+$data = mysql_fetch_array($Qre);
+$stuname = $data['First_name']." ".$data['Last_name'];
 
 ?>
 <!DOCTYPE html>
