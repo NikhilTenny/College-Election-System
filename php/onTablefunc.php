@@ -14,9 +14,7 @@
 	// Delete an election
 	if(isset($_GET['election_Id'])) {
 		$eid = $_GET['election_Id'];
-		echo $eid;
 		if(mysql_query("delete from elections where id = $eid;",$con)) {
-			echo "dfdfdf";
 			header("Location:/project/elections.php");
 		}
 

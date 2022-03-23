@@ -120,7 +120,7 @@
 				<input type="text" name="Fname" placeholder="First Name" value="<?php echo (isset($_SESSION ['data']['Fname'])) ? $_SESSION['data']['Fname'] : '' ?>"  autocomplete="off" required>
 				
 				<input type="text" name="Lname" placeholder="Last Name" value="<?php echo (isset($_SESSION['data']['Lname'])) ? $_SESSION['data']['Lname'] : '' ?>" autocomplete="off" required>
-				<input type="text" name="Pno" placeholder="Phone Number" maxlength="10" required>
+				<input type="text" name="Pno" placeholder="Phone Number" maxlength="10" minlength="10" required>
 				<input id="sign-uname" type="email" name="Eid" placeholder="Email ID" autocomplete="off" required>
 							
 				<div class="Drop-area">

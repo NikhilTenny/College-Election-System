@@ -53,7 +53,7 @@ $stuname = $data['First_name']." ".$data['Last_name'];
 					</div>
 		</div>
 		<div class="center_Portion">
-			<span class="simple_text"> You have successfully Voted <a href="/project/noele.php">click here</a></span>
+			<span class="simple_text" style="color:black;"> You have successfully Voted <a href="/project/noele.php">click here</a></span>
 		</div>
 	</div>
 </body>

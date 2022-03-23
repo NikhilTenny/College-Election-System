@@ -42,7 +42,7 @@ while($data = mysql_fetch_array($Qre)){
 						<a href=""><button class="btn election " style="background:#778ca3; color:white;">Election</button></a>
 					</div>
 					<div class="cand_Apply">
-						<a href="stuapply.php"><button class="btn Apply" >Apply</button></a>
+						<a href=""><button class="btn Apply" >Apply</button></a>
 					</div>
 					<div class="result_View">
 						<a href="php/resultcheck.php"><button class="btn result">Result</button></a>

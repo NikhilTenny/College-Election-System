@@ -19,42 +19,8 @@ $getQob = mysql_query($getQ,$con);
 $eedata = mysql_fetch_array($getQob);
 $eid = $eedata['id'];
 
-#Set the male and female winners uids in Result table
-function set_result_table($eid,$con) {	
-	$getQ = "select * from candidate where Elections_id = $eid order by Votes DESC";# Get the candidate details in decending order to find the winners
-	$getob = mysql_query($getQ,$con);
-	if($getob){
-		while($cand_data = mysql_fetch_array($getob)) {
-			if(isset($m_win_id) and isset($f_win_id)) { #if we got both winner break the loop
-				break;
-			}
-			$cand_uid = $cand_data['User_id'];
-			$studata = getStuData($cand_uid,$con); #Get the winnner student details
-			if(!isset($m_win_uid)) { #Until the male winner id hasn't retrived		
-				if($studata['Gender'] == 'Male') { 
-					#store the winner details
-					$m_win_cid = $cand_data['id'];  
-					$m_win_uid = $studata['id'];
-					$m_win_name = getFullName($m_win_uid,$con);
-					$m_votes = $cand_data['Votes'];
-					continue;
-				}
-			}		
-			if(!isset($f_win_uid)) { #Until the female winner id hasn't retrived
-				if($studata['Gender'] == 'Female') {
-					$f_win_cid = $cand_data['id'];
-					$f_win_uid = $studata['id'];
-					$f_win_name = getFullName($f_win_uid,$con);
-					$f_votes = $cand_data['Votes'];
-					continue;
-				}
-			}
-		}
-	}
-	
 
-} 
-set_result_table($eid,$con);
+
 
 
 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 25, 2022 at 11:56 AM
+-- Generation Time: Mar 23, 2022 at 02:24 PM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
 --
 
 INSERT INTO `admin` (`id`, `Email`, `First_name`, `Last_name`) VALUES
-(1, 'nikhil@gmail.com', 'Nikhil', 'Tenny'),
+(1, 'nikhil@gmail.com', 'nikhil', 'gg'),
 (2, 'jevin@gmail.com', 'Jevin', 'Thekekara'),
 (3, 'asif@gmail.com', 'Asif', 'Muhammad');
 
@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `applicant` (
   PRIMARY KEY (`id`),
   KEY `applicant_ibfk_1` (`Election_id`),
   KEY `applicant_ibfk_2` (`User_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=44 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 -- --------------------------------------------------------
 
@@ -97,40 +97,35 @@ CREATE TABLE IF NOT EXISTS `candidate` (
   PRIMARY KEY (`id`),
   KEY `candidate_user_id` (`User_id`),
   KEY `candidate_ele_id` (`Elections_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=52 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=81 ;
 
 --
 -- Dumping data for table `candidate`
 --
 
 INSERT INTO `candidate` (`id`, `User_id`, `Elections_id`, `Votes`) VALUES
-(18, 85, 23, 1),
-(19, 86, 23, 5),
-(20, 92, 23, 4),
-(21, 89, 23, 3),
-(22, 84, 29, 4),
-(23, 86, 29, 5),
-(24, 89, 29, 2),
-(25, 91, 29, 3),
-(26, 92, 29, 4),
-(27, 85, 30, 5),
-(28, 92, 30, 5),
-(29, 88, 30, 0),
-(30, 90, 30, 0),
-(35, 85, 40, 2),
-(36, 86, 40, 4),
-(37, 87, 40, 1),
-(38, 91, 40, 7),
-(39, 95, 41, 0),
-(40, 96, 41, 0),
-(41, 99, 41, 0),
-(42, 100, 41, 0),
-(46, 101, 45, 0),
-(47, 97, 45, 0),
-(48, 97, 46, 1),
-(49, 96, 46, 4),
-(50, 99, 46, 2),
-(51, 101, 46, 3);
+(57, 85, 52, 4),
+(58, 86, 52, 2),
+(59, 89, 52, 3),
+(60, 91, 52, 3),
+(61, 114, 53, 3),
+(62, 115, 53, 1),
+(63, 116, 53, 3),
+(64, 117, 53, 1),
+(65, 109, 54, 2),
+(66, 110, 54, 2),
+(67, 111, 54, 3),
+(68, 112, 54, 1),
+(69, 119, 55, 2),
+(70, 120, 55, 0),
+(71, 121, 55, 2),
+(72, 122, 55, 0),
+(74, 124, 57, 3),
+(75, 125, 57, 0),
+(76, 126, 57, 3),
+(78, 109, 61, 3),
+(79, 111, 61, 2),
+(80, 112, 61, 1);
 
 -- --------------------------------------------------------
 
@@ -175,21 +170,19 @@ CREATE TABLE IF NOT EXISTS `elections` (
   PRIMARY KEY (`id`),
   KEY `elections_dpt` (`Department_id`),
   KEY `elections_year` (`Year_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=47 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=62 ;
 
 --
 -- Dumping data for table `elections`
 --
 
 INSERT INTO `elections` (`id`, `Name`, `Department_id`, `Year_id`, `Election_status`, `Start_date`, `End_date`, `Start_time`, `End_time`, `Voters`) VALUES
-(23, 'BCA Second', 1, 2, 2, '2021-12-05', '2021-12-05', '23:05:00', '23:10:00', 12),
-(28, 'Meta Election', 1, 2, 2, '2022-01-24', '2022-01-24', '19:00:00', '19:07:00', 12),
-(29, 'miide', 1, 2, 2, '2022-01-24', '2022-01-24', '20:01:00', '20:09:00', 12),
-(30, 'mild', 1, 2, 2, '2022-01-24', '2022-01-24', '22:00:00', '22:33:00', 12),
-(40, 'The Great', 1, 2, 2, '2022-01-25', '2022-01-25', '10:25:00', '10:30:00', 12),
-(41, 'puthiyath', 1, 3, 2, '2022-01-25', '2022-01-25', '10:38:00', '10:39:00', 10),
-(45, 'qwerqwer', 1, 3, 2, '2022-01-25', '2022-01-25', '10:49:00', '10:50:00', 10),
-(46, 'Multiple', 1, 3, 2, '2022-01-25', '2022-01-25', '11:01:00', '11:06:00', 10);
+(52, 'Second BCA', 1, 2, 2, '2022-03-22', '2022-03-22', '20:37:00', '20:40:00', 12),
+(53, 'First Bcom', 4, 1, 2, '2022-03-22', '2022-03-22', '20:53:00', '20:55:00', 6),
+(54, 'First MCA', 3, 1, 2, '2022-03-22', '2022-03-22', '21:04:00', '21:06:00', 6),
+(55, 'First Mcom', 6, 1, 2, '2022-03-22', '2022-03-22', '23:16:00', '23:18:00', 5),
+(57, 'BCa frist', 1, 1, 2, '2022-03-23', '2022-03-23', '10:32:00', '10:36:00', 5),
+(61, 'mca', 3, 1, 2, '2022-03-23', '2022-03-23', '11:27:00', '11:31:00', 8);
 
 -- --------------------------------------------------------
 
@@ -210,7 +203,12 @@ CREATE TABLE IF NOT EXISTS `result` (
 --
 
 INSERT INTO `result` (`E_id`, `M_win_id`, `F_win_id`) VALUES
-(46, 49, 51);
+(52, 57, 59),
+(53, 61, 63),
+(54, 65, 67),
+(55, 69, 71),
+(57, 74, 76),
+(61, 78, 79);
 
 -- --------------------------------------------------------
 
@@ -230,7 +228,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`),
   KEY `users_dpt` (`Department_id`),
   KEY `users_yr` (`Year_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=107 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=134 ;
 
 --
 -- Dumping data for table `users`
@@ -238,7 +236,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `Email`, `Phone_no`, `First_name`, `Last_name`, `Gender`, `Department_id`, `Year_id`) VALUES
 (84, 'baburaj@gmail.com', 9852314789, 'Babu', 'Raj', 'Male', 1, 2),
-(85, 'shinechaco@gmail.com', 6589745236, 'Shine', 'Chach', 'Male', 1, 2),
+(85, 'shinechaco@gmail.com', 6589745236, 'SoniaA', 'Chacho', 'Male', 1, 2),
 (86, 'rameshsuku@gmail.com', 7895632897, 'Ramesh', 'Suku', 'Male', 1, 2),
 (87, 'bajajtata@gmail.com', 9856485623, 'Bajaj', 'Tata', 'Male', 1, 2),
 (88, 'aliakbar@gmail.com', 7589623568, 'Ali', 'Akbar', 'Male', 1, 2),
@@ -259,7 +257,32 @@ INSERT INTO `users` (`id`, `Email`, `Phone_no`, `First_name`, `Last_name`, `Gend
 (103, 'haley@gmail.com', 2154986532, 'haley', 'george', 'Female', 1, 2),
 (104, 'asifali@gmail.com', 5487548754, 'Asif', 'Ali', 'Male', 1, 2),
 (105, 'rohit@gmail.com', 8523698745, 'rohit', 'kr', 'Male', 1, 2),
-(106, 'newman@gmail.com', 9876543215, 'newman', 'corola', 'Male', 3, 1);
+(107, 'anand@gmail.com', 8765549887, 'Anand', 'Krishna', 'Male', 3, 1),
+(108, 'Tuddy@gmail.com', 9865548765, 'Tuddy', 'Marcy', 'Male', 4, 1),
+(109, 'maron@gmail.com', 6589748836, 'maron', 'Karino', 'Male', 3, 1),
+(110, 'alex@gmail.com', 6589748333, 'Alex', 'Franky', 'Male', 3, 1),
+(111, 'mishel@gmail.com', 6589748222, 'Mishel', 'Carno', 'Female', 3, 1),
+(112, 'sonia@gmail.com', 6589748111, 'sonia', 'Marky', 'Female', 3, 1),
+(113, 'emili@gmail.com', 6589748444, 'Emili', 'Franky', 'Male', 3, 1),
+(114, 'james@gmail.com', 6585648836, 'James', 'Chako', 'Male', 4, 1),
+(115, 'liam@gmail.com', 6589118836, 'Liam', 'Paull', 'Male', 4, 1),
+(116, 'alysha@gmail.com', 6582248836, 'Alysha', 'Cargo', 'Female', 4, 1),
+(117, 'mariaa@gmail.com', 6583348836, 'Maria', 'Anna', 'Female', 4, 1),
+(118, 'olivia@gmail.com', 6584448836, 'Olivia', 'Alice', 'Female', 4, 1),
+(119, 'davit@gmail.com', 6585118836, 'Davit', 'Narek', 'Male', 6, 1),
+(120, 'yusif@gmail.com', 6589118836, 'Yusif', 'ali', 'Male', 6, 1),
+(121, 'areema@gmail.com', 6589228836, 'Areema', 'khan', 'Female', 6, 1),
+(122, 'amelia@gmail.com', 6589338836, 'Amelia', 'Victo', 'Female', 6, 1),
+(123, 'sofy@gmail.com', 6589398836, 'Sofy', 'ali', 'Female', 6, 1),
+(124, 'leo@gmail.com', 6585111136, 'Leo', 'Thrif', 'Male', 1, 1),
+(125, 'oscar@gmail.com', 6589112236, 'Oscar', 'Mathew', 'Male', 1, 1),
+(126, 'fatma@gmail.com', 6589223336, 'Fatma', 'khan', 'Female', 1, 1),
+(127, 'nur@gmail.com', 6589334436, 'Nur', 'Victo', 'Female', 1, 1),
+(128, 'Shristi@gmail.com', 6589395536, 'Shristi', 'Kiwi', 'Female', 1, 1),
+(129, 'aruno@gmail.com', 9126419595, 'aruno', 'Kabir', 'Male', 3, 1),
+(131, 'abil@gmail.com', 8652412593, 'abil', 'jose', 'Male', 3, 1),
+(132, 'kiran@gmail.com', 9865215665, 'Kirran', 'Mathew', 'Male', 4, 1),
+(133, 'asif@gmail.com', 9898765455, 'asif', 'm', 'Male', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -302,7 +325,32 @@ INSERT INTO `user_login` (`id`, `Password`) VALUES
 (103, 'asdf'),
 (104, 'asdf'),
 (105, '12345'),
-(106, 'asdf');
+(107, 'asdf'),
+(108, ';lkj'),
+(109, 'asdf'),
+(110, 'asdf'),
+(111, 'asdf'),
+(112, 'asdf'),
+(113, 'asdf'),
+(114, 'asdf'),
+(115, 'asdf'),
+(116, 'asdf'),
+(117, 'asdf'),
+(118, 'asdf'),
+(119, 'asdf'),
+(120, 'asdf'),
+(121, 'asdf'),
+(122, 'asdf'),
+(123, 'asdf'),
+(124, 'asdf'),
+(125, 'asdf'),
+(126, 'asdf'),
+(127, 'asdf'),
+(128, 'asdf'),
+(129, 'asdf'),
+(131, 'asdf'),
+(132, 'asdf'),
+(133, 'asdf');
 
 -- --------------------------------------------------------
 
@@ -318,103 +366,55 @@ CREATE TABLE IF NOT EXISTS `voters_list` (
   PRIMARY KEY (`id`),
   KEY `voters_list_user_id` (`User_id`),
   KEY `voters_list_election_id` (`Election_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=502 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=593 ;
 
 --
 -- Dumping data for table `voters_list`
 --
 
 INSERT INTO `voters_list` (`id`, `User_id`, `Election_id`, `Vote_status`) VALUES
-(238, 84, 23, 1),
-(239, 85, 23, 1),
-(240, 86, 23, 1),
-(241, 87, 23, 1),
-(242, 88, 23, 1),
-(243, 89, 23, 1),
-(244, 90, 23, 1),
-(245, 91, 23, 1),
-(246, 92, 23, 1),
-(247, 103, 23, 0),
-(248, 104, 23, 0),
-(249, 105, 23, 0),
-(286, 84, 28, 1),
-(287, 85, 28, 1),
-(288, 86, 28, 1),
-(289, 87, 28, 1),
-(290, 88, 28, 1),
-(291, 89, 28, 1),
-(292, 90, 28, 1),
-(293, 91, 28, 1),
-(294, 92, 28, 1),
-(295, 103, 28, 0),
-(296, 104, 28, 0),
-(297, 105, 28, 0),
-(298, 84, 29, 1),
-(299, 85, 29, 1),
-(300, 86, 29, 1),
-(301, 87, 29, 1),
-(302, 88, 29, 1),
-(303, 89, 29, 1),
-(304, 90, 29, 1),
-(305, 91, 29, 1),
-(306, 92, 29, 1),
-(307, 103, 29, 0),
-(308, 104, 29, 0),
-(309, 105, 29, 0),
-(310, 84, 30, 0),
-(311, 85, 30, 1),
-(312, 86, 30, 0),
-(313, 87, 30, 1),
-(314, 88, 30, 0),
-(315, 89, 30, 0),
-(316, 90, 30, 0),
-(317, 91, 30, 0),
-(318, 92, 30, 0),
-(319, 103, 30, 0),
-(320, 104, 30, 0),
-(321, 105, 30, 0),
-(430, 84, 40, 0),
-(431, 85, 40, 1),
-(432, 86, 40, 1),
-(433, 87, 40, 1),
-(434, 88, 40, 1),
-(435, 89, 40, 1),
-(436, 90, 40, 0),
-(437, 91, 40, 1),
-(438, 92, 40, 1),
-(439, 103, 40, 0),
-(440, 104, 40, 0),
-(441, 105, 40, 0),
-(442, 93, 41, 0),
-(443, 94, 41, 0),
-(444, 95, 41, 0),
-(445, 96, 41, 0),
-(446, 97, 41, 0),
-(447, 98, 41, 0),
-(448, 99, 41, 0),
-(449, 100, 41, 0),
-(450, 101, 41, 0),
-(451, 102, 41, 0),
-(482, 93, 45, 0),
-(483, 94, 45, 0),
-(484, 95, 45, 0),
-(485, 96, 45, 0),
-(486, 97, 45, 0),
-(487, 98, 45, 0),
-(488, 99, 45, 0),
-(489, 100, 45, 0),
-(490, 101, 45, 0),
-(491, 102, 45, 0),
-(492, 93, 46, 1),
-(493, 94, 46, 0),
-(494, 95, 46, 1),
-(495, 96, 46, 0),
-(496, 97, 46, 1),
-(497, 98, 46, 0),
-(498, 99, 46, 1),
-(499, 100, 46, 1),
-(500, 101, 46, 0),
-(501, 102, 46, 0);
+(528, 84, 52, 0),
+(529, 85, 52, 1),
+(530, 86, 52, 1),
+(531, 87, 52, 1),
+(532, 88, 52, 0),
+(533, 89, 52, 0),
+(534, 90, 52, 1),
+(535, 91, 52, 1),
+(536, 92, 52, 1),
+(537, 103, 52, 0),
+(538, 104, 52, 0),
+(539, 105, 52, 0),
+(540, 108, 53, 0),
+(541, 114, 53, 1),
+(542, 115, 53, 0),
+(543, 116, 53, 1),
+(544, 117, 53, 1),
+(545, 118, 53, 1),
+(546, 107, 54, 0),
+(547, 109, 54, 1),
+(548, 110, 54, 1),
+(549, 111, 54, 1),
+(550, 112, 54, 1),
+(551, 113, 54, 0),
+(552, 119, 55, 0),
+(553, 120, 55, 0),
+(554, 121, 55, 1),
+(555, 122, 55, 1),
+(556, 123, 55, 0),
+(562, 124, 57, 1),
+(563, 125, 57, 1),
+(564, 126, 57, 0),
+(565, 127, 57, 1),
+(566, 128, 57, 0),
+(585, 107, 61, 0),
+(586, 109, 61, 1),
+(587, 110, 61, 0),
+(588, 111, 61, 0),
+(589, 112, 61, 1),
+(590, 113, 61, 1),
+(591, 129, 61, 0),
+(592, 131, 61, 0);
 
 -- --------------------------------------------------------
 
